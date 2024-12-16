@@ -14,9 +14,11 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0"
    xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <!-- Header -->
       <HBox prefHeight="104.0" prefWidth="1326.0"
          style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
          <children>
+            <!-- Logo -->
             <VBox prefHeight="102.0" prefWidth="231.0">
                <children>
                   <Pane prefHeight="102.0" prefWidth="237.0">
@@ -38,6 +40,8 @@
                   </Pane>
                </children>
             </VBox>
+
+            <!-- Search bar -->
             <HBox prefHeight="102.0" prefWidth="882.0">
                <children>
                   <Pane prefHeight="102.0" prefWidth="562.0">
@@ -63,6 +67,8 @@
                   </Pane>
                </children>
             </HBox>
+
+            <!-- Cart -->
             <VBox prefHeight="102.0" prefWidth="161.0">
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0">
@@ -83,6 +89,8 @@
             </VBox>
          </children>
       </HBox>
+
+      <!-- Body -->
       <HBox fx:id="hboxMedia" layoutX="24.0" layoutY="123.0" prefHeight="629.0" prefWidth="1283.0">
          <children>
             <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0"

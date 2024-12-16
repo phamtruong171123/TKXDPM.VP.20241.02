@@ -13,13 +13,17 @@
 
 <AnchorPane prefHeight="211.0" prefWidth="298.0" style="-fx-border-color: #ccd9ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <!-- Bìa -->
       <ImageView fx:id="mediaImage" fitHeight="152.0" fitWidth="160.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../fxml/images/Logo.png" />
          </image>
       </ImageView>
+
+
       <Pane layoutX="200.0" layoutY="-1.0" prefHeight="210.0" prefWidth="110.0">
          <children>
+            <!-- Title -->
             <VBox prefHeight="39.0" prefWidth="110.0">
                <children>
                   <Label fx:id="mediaTitle" alignment="CENTER" prefHeight="45.0" prefWidth="110.0" text="  Title" textAlignment="CENTER" wrapText="true">
@@ -29,8 +33,11 @@
                   </Label>
                </children>
             </VBox>
+
+
             <VBox layoutY="39.0" prefHeight="170.0" prefWidth="110.0" style="-fx-border-color: #80ff80;">
                <children>
+                  <!-- Price -->
                   <HBox alignment="CENTER" prefHeight="32.0" prefWidth="106.0">
                      <children>
                         <Pane prefHeight="45.0" prefWidth="55.0">
@@ -49,6 +56,8 @@
                         </Pane>
                      </children>
                   </HBox>
+
+                  <!-- Available -->
                   <HBox prefHeight="30.0" prefWidth="106.0">
                      <children>
                         <Pane prefHeight="50.0" prefWidth="56.0">
@@ -67,11 +76,15 @@
                         </Pane>
                      </children>
                   </HBox>
+
+                  <!-- Quantity -->
                   <HBox alignment="CENTER" prefHeight="32.0" prefWidth="106.0">
                      <children>
                         <Spinner fx:id="spinnerChangeNumber" prefHeight="26.0" prefWidth="98.0" />
                      </children>
                   </HBox>
+
+                  <!-- Button add to cart -->
                   <HBox alignment="CENTER" prefHeight="72.0" prefWidth="106.0">
                      <children>
                         <Button fx:id="addToCartBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" style="-fx-cursor: hand;" text="Add to Cart" />
@@ -79,6 +92,7 @@
                   </HBox>
                </children>
             </VBox>
-         </children></Pane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

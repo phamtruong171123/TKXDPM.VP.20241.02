@@ -19,8 +19,10 @@
          prefWidth="976.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="12.0"
          AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
          <children>
+            <!-- Ảnh bìa -->
             <VBox fx:id="imageLogoVbox" alignment="CENTER" prefHeight="78.0" prefWidth="185.0">
                <children>
+                  <!-- Ảnh bìa -->
                   <ImageView fx:id="image" fitHeight="103.0" fitWidth="95.0" pickOnBounds="true"
                      preserveRatio="true">
                      <image>
@@ -32,8 +34,11 @@
                   </ImageView>
                </children>
             </VBox>
+
+            <!-- Tiêu đề -->
             <VBox fx:id="description" prefHeight="99.0" prefWidth="348.0">
                <children>
+                  <!-- Title -->
                   <Label fx:id="title" contentDisplay="CENTER" maxHeight="-Infinity"
                      maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
                      prefHeight="46.0" prefWidth="353.0" text="Title of Media"
@@ -45,6 +50,8 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
+
+                  <!-- Button Delete -->
                   <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="45.0"
                      prefWidth="166.0" text="Delete">
                      <font>
@@ -59,12 +66,16 @@
                   <Insets left="10.0" />
                </HBox.margin>
             </VBox>
+
+            <!-- Hết hàng -->
             <VBox alignment="CENTER" prefHeight="78.0" prefWidth="216.0">
                <children>
                   <Label fx:id="labelOutOfStock" prefHeight="44.0" prefWidth="168.0"
                      textFill="#e11111" wrapText="true" />
                </children>
             </VBox>
+
+            <!-- Price -->
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                minWidth="-Infinity" prefHeight="82.0" prefWidth="188.0">
                <children>
@@ -76,6 +87,7 @@
                         <Font name="Segoe UI Bold" size="24.0" />
                      </font>
                   </Label>
+
                   <Label fx:id="currency" alignment="TOP_RIGHT" contentDisplay="CENTER"
                      maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                      minWidth="-Infinity" prefHeight="39.0" prefWidth="172.0" text="VND"

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+// Data coupling
+// 
 public class Cart {
     
     private List<CartMedia> lstCartMedia;
