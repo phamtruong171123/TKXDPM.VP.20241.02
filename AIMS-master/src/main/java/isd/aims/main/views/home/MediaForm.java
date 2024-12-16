@@ -10,6 +10,7 @@ import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.entity.media.Media;
 import isd.aims.main.utils.Configs;
+import isd.aims.main.utils.StaticResourcesConfigs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.FXMLForm;
 import isd.aims.main.views.popup.PopupForm;
@@ -91,7 +92,7 @@ public class MediaForm extends FXMLForm {
 
     private void setMediaInfo() throws SQLException {
         // set the cover image of media
-        File file = new File(Configs.IMAGE_PATH + media.getImageURL());
+        File file = new File(StaticResourcesConfigs.IMAGE_PATH + media.getImageURL());
         Image image = new Image(file.toURI().toString());
         mediaImage.setFitHeight(160);
         mediaImage.setFitWidth(152);
@@ -104,7 +105,7 @@ public class MediaForm extends FXMLForm {
             new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1)
         );
 
-        // setImage(mediaImage, media.getImageURL());
+//         setImage(mediaImage, media.getImageURL());
     }
 
 }
