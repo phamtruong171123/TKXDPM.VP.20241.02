@@ -2,5 +2,5 @@
 
 - Phạm Minh Trường - 20215292
 - Nguyễn Hùng Cường
-- Bùi Khánh Hoàng
+- Bùi Khánh Hoàng  - 20215273
 - Hoàng Nguyễn Trường Giang

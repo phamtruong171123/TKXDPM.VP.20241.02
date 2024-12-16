@@ -35,4 +35,14 @@ public class VnPaySubsystem implements IPayment {
             throw new RuntimeException(e);
         }
     }
+    
+     @Override
+    public void processPayment(int amount, String contents, Object cardDetails) throws PaymentException, UnrecognizedException {
+        if (cardDetails instanceof CreditCard) {
+            System.out.println("Processing Credit Card Payment");
+        } else if (cardDetails instanceof DomesticCard) {
+            System.out.println("Processing Domestic Card Payment");
+        }
+        generatePaymentURL(amount, contents);
+    }
 }
