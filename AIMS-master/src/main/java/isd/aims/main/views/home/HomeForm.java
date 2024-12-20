@@ -85,7 +85,7 @@ public class HomeForm extends BaseForm implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         setBController(new HomeController());
-        try{
+        try {
             List medium = getBController().getAllMedia();
             this.homeItems = new ArrayList();
             for (Object object : medium) {
@@ -93,7 +93,7 @@ public class HomeForm extends BaseForm implements Initializable {
                 MediaForm m1 = new MediaForm(Configs.HOME_MEDIA_PATH, media, this);
                 this.homeItems.add(m1);
             }
-        }catch (SQLException | IOException e){
+        } catch (SQLException | IOException e){
             LOGGER.info("Errors occured: " + e.getMessage());
             e.printStackTrace();
         }
@@ -143,7 +143,7 @@ public class HomeForm extends BaseForm implements Initializable {
             hboxMedia.getChildren().forEach(node -> {
                 int vid = hboxMedia.getChildren().indexOf(node);
                 VBox vBox = (VBox) node;
-                while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
+                while(vBox.getChildren().size() < 3 && !mediaItems.isEmpty()){
                     MediaForm media = (MediaForm) mediaItems.get(0);
                     vBox.getChildren().add(media.getContent());
                     mediaItems.remove(media);

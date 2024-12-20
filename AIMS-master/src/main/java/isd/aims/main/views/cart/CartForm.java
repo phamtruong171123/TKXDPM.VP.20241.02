@@ -58,9 +58,9 @@ public class CartForm extends BaseForm {
 		super(stage, screenPath);
 
 		// fix relative image path caused by fxml
-		File file = new File("isd/aims/main/fxml/images/Logo.png");
-		Image im = new Image(file.toURI().toString());
-		aimsImage.setImage(im);
+//		File file = new File("isd/aims/main/fxml/images/Logo.png");
+//		Image im = new Image(file.toURI().toString());
+//		aimsImage.setImage(im);
 
 		// on mouse clicked, we back to home
 		aimsImage.setOnMouseClicked(e -> {
@@ -156,6 +156,12 @@ public class CartForm extends BaseForm {
 
 		// get list media of cart after check availability
 		List lstMedia = getBController().getListCartMedia();
+		if (lstMedia == null || lstMedia.isEmpty()) {
+			System.out.println("Danh sách cartMedia rỗng!");
+			return;
+		} else {
+			System.out.println("Danh sách cartMedia: " + lstMedia.size() + " mục");
+		}
 
 		try {
 			for (Object cm : lstMedia) {
