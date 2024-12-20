@@ -1,13 +1,13 @@
 # TKXDPM.VP.20241.02
 
 - Phạm Minh Trường - 20215292. 
-  Use case: Tính phí giao hàng (    Shipping Fee Calculator). 
+  Use case: Thanh toán
   
 - Nguyễn Hùng Cường. 
-  Use case: Thiết kế giao diện. 
+  Use case: Sắp xếp mặt hàng, tìm kiếm sản phẩm 
   
 - Bùi Khánh Hoàng  - 20215273. 
-   Use case: Thanh toán. 
+   Use case: Thiết kế giao diện
     
 - Hoàng Nguyễn Trường Giang.    
-   Use case: thêm mặt hàng mới. 
+   Use case: Đặt hàng
