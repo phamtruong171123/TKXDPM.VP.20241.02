@@ -1,13 +1,9 @@
 package isd.aims.main.entity.media;
 
-import isd.aims.main.entity.db.DBConnection;
+import isd.aims.main.repository.impl.MediaRepositoryImpl;
 import isd.aims.main.utils.Utils;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -18,7 +14,7 @@ public class Media {
 
     private static Logger LOGGER = Utils.getLogger(Media.class.getName());
 
-    protected Statement stm;
+//    protected Statement stm;
     protected int id;
     protected String title;
     protected String category;
@@ -28,72 +24,81 @@ public class Media {
     protected String type;
     protected String imageURL;
 
-    public Media() throws SQLException{
-        stm = DBConnection.getConnection().createStatement();
-    }
+//    public Media() throws SQLException{
+//        stm = DBConnection.getConnection().createStatement();
+//    }
+    private MediaRepositoryImpl mediaRepository;
 
-    public Media (int id, String title, String category, int price, int quantity, String type) throws SQLException{
+    public Media (int id, String title, String category, int price, int quantity, String type, String imageURL) throws SQLException{
         this.id = id;
         this.title = title;
         this.category = category;
         this.price = price;
         this.quantity = quantity;
         this.type = type;
+        this.imageURL = imageURL;
+        mediaRepository = new MediaRepositoryImpl();
 
         //stm = DBConnection.getConnection().createStatement();
     }
-
-    public int getQuantity() throws SQLException{
-        int updated_quantity = getMediaById(id).quantity;
-        this.quantity = updated_quantity;
-        return updated_quantity;
-    }
-
-    public Media getMediaById(int id) throws SQLException{
-        String sql = "SELECT * FROM Media ;";
-        Statement stm = DBConnection.getConnection().createStatement();
-        ResultSet res = stm.executeQuery(sql);
-		if(res.next()) {
-
-            return new Media()
-                .setId(res.getInt("id"))
-                .setTitle(res.getString("title"))
-                .setQuantity(res.getInt("quantity"))
-                .setCategory(res.getString("category"))
-                .setMediaURL(res.getString("imageUrl"))
-                .setPrice(res.getInt("price"))
-                .setType(res.getString("type"));
+    public int getQuantity() throws SQLException {
+        Media updatedMedia = mediaRepository.getById(id);
+        if (updatedMedia != null) {
+            this.quantity = updatedMedia.quantity;
         }
-        return null;
+        return this.quantity;
     }
+//    public int getQuantity() throws SQLException{
+//        int updated_quantity = getMediaById(id).quantity;
+//        this.quantity = updated_quantity;
+//        return updated_quantity;
+//    }
 
-    public List getAllMedia() throws SQLException{
-        Statement stm = DBConnection.getConnection().createStatement();
-        ResultSet res = stm.executeQuery("select * from Media");
-        ArrayList medium = new ArrayList<>();
-        while (res.next()) {
-            Media media = new Media()
-                .setId(res.getInt("id"))
-                .setTitle(res.getString("title"))
-                .setQuantity(res.getInt("quantity"))
-                .setCategory(res.getString("category"))
-                .setMediaURL(res.getString("imageUrl"))
-                .setPrice(res.getInt("price"))
-                .setType(res.getString("type"));
-            medium.add(media);
-        }
-        return medium;
-    }
-
-    public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {
-        Statement stm = DBConnection.getConnection().createStatement();
-        if (value instanceof String){
-            value = "\"" + value + "\"";
-        }
-        stm.executeUpdate(" update " + tbname + " set" + " " 
-                          + field + "=" + value + " " 
-                          + "where id=" + id + ";");
-    }
+//    public Media getMediaById(int id) throws SQLException{
+//        String sql = "SELECT * FROM Media ;";
+//        Statement stm = DBConnection.getConnection().createStatement();
+//        ResultSet res = stm.executeQuery(sql);
+//		if(res.next()) {
+//
+//            return new Media()
+//                .setId(res.getInt("id"))
+//                .setTitle(res.getString("title"))
+//                .setQuantity(res.getInt("quantity"))
+//                .setCategory(res.getString("category"))
+//                .setMediaURL(res.getString("imageUrl"))
+//                .setPrice(res.getInt("price"))
+//                .setType(res.getString("type"));
+//        }
+//        return null;
+//    }
+//
+//    public List getAllMedia() throws SQLException{
+//        Statement stm = DBConnection.getConnection().createStatement();
+//        ResultSet res = stm.executeQuery("select * from Media");
+//        ArrayList medium = new ArrayList<>();
+//        while (res.next()) {
+//            Media media = new Media()
+//                .setId(res.getInt("id"))
+//                .setTitle(res.getString("title"))
+//                .setQuantity(res.getInt("quantity"))
+//                .setCategory(res.getString("category"))
+//                .setMediaURL(res.getString("imageUrl"))
+//                .setPrice(res.getInt("price"))
+//                .setType(res.getString("type"));
+//            medium.add(media);
+//        }
+//        return medium;
+//    }
+//
+//    public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {
+//        Statement stm = DBConnection.getConnection().createStatement();
+//        if (value instanceof String){
+//            value = "\"" + value + "\"";
+//        }
+//        stm.executeUpdate(" update " + tbname + " set" + " "
+//                          + field + "=" + value + " "
+//                          + "where id=" + id + ";");
+//    }
 
     // getter and setter 
     public int getId() {

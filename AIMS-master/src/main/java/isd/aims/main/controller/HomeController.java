@@ -1,6 +1,7 @@
 package isd.aims.main.controller;
 
 import isd.aims.main.entity.media.Media;
+import isd.aims.main.repository.impl.MediaRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,7 +21,7 @@ public class HomeController extends BaseController{
      */
     @SuppressWarnings("rawtypes")
     public List getAllMedia() throws SQLException{
-        return new Media().getAllMedia();
+        return new MediaRepositoryImpl().getAll();
     }
 
 }

@@ -1,9 +1,7 @@
 package isd.aims.main.entity.media;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.List;
 
 public class DVD extends Media {
 
@@ -15,13 +13,14 @@ public class DVD extends Media {
     Date releasedDate;
     String filmType;
 
-    public DVD() throws SQLException{
 
-    }
+//    public DVD() throws SQLException{
+//
+//    }
 
-    public DVD(int id, String title, String category, int price, int quantity, String type, String discType,
+    public DVD(int id, String title, String category, int price, int quantity, String type, String imageURL, String discType,
             String director, int runtime, String studio, String subtitles, Date releasedDate, String filmType) throws SQLException{
-        super(id, title, category, price, quantity, type);
+        super(id, title, category, price, quantity, type, imageURL);
         this.discType = discType;
         this.director = director;
         this.runtime = runtime;
@@ -101,41 +100,41 @@ public class DVD extends Media {
                 + releasedDate + "'" + ", filmType='" + filmType + "'" + "}";
     }
 
-    @Override
-    public Media getMediaById(int id) throws SQLException {
-        String sql = "SELECT * FROM "+
-                     "aims.DVD " +
-                     "INNER JOIN aims.Media " +
-                     "ON Media.id = DVD.id " +
-                     "where Media.id = " + id + ";";
-        ResultSet res = stm.executeQuery(sql);
-        if(res.next()) {
-            
-        // from media table
-        String title = "";
-        String type = res.getString("type");
-        int price = res.getInt("price");
-        String category = res.getString("category");
-        int quantity = res.getInt("quantity");
-
-        // from DVD table
-        String discType = res.getString("discType");
-        String director = res.getString("director");
-        int runtime = res.getInt("runtime");
-        String studio = res.getString("studio");
-        String subtitles = res.getString("subtitle");
-        Date releasedDate = res.getDate("releasedDate");
-        String filmType = res.getString("filmType");
-
-        return new DVD(id, title, category, price, quantity, type, discType, director, runtime, studio, subtitles, releasedDate, filmType);
-
-        } else {
-            throw new SQLException();
-        }
-    }
-
-    @Override
-    public List getAllMedia() {
-        return null;
-    }
+//    @Override
+//    public Media getMediaById(int id) throws SQLException {
+//        String sql = "SELECT * FROM "+
+//                     "aims.DVD " +
+//                     "INNER JOIN aims.Media " +
+//                     "ON Media.id = DVD.id " +
+//                     "where Media.id = " + id + ";";
+//        ResultSet res = stm.executeQuery(sql);
+//        if(res.next()) {
+//
+//        // from media table
+//        String title = "";
+//        String type = res.getString("type");
+//        int price = res.getInt("price");
+//        String category = res.getString("category");
+//        int quantity = res.getInt("quantity");
+//
+//        // from DVD table
+//        String discType = res.getString("discType");
+//        String director = res.getString("director");
+//        int runtime = res.getInt("runtime");
+//        String studio = res.getString("studio");
+//        String subtitles = res.getString("subtitle");
+//        Date releasedDate = res.getDate("releasedDate");
+//        String filmType = res.getString("filmType");
+//
+//        return new DVD(id, title, category, price, quantity, type, discType, director, runtime, studio, subtitles, releasedDate, filmType);
+//
+//        } else {
+//            throw new SQLException();
+//        }
+//    }
+//
+//    @Override
+//    public List getAllMedia() {
+//        return null;
+//    }
 }
