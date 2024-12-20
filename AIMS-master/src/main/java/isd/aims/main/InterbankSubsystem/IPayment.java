@@ -20,5 +20,5 @@ public interface IPayment {
      */
     public abstract String generatePaymentURL(int amount, String contents)
             throws PaymentException, UnrecognizedException;
-
+  void processPayment(int amount, String contents, Object cardDetails) throws PaymentException, UnrecognizedException;
 }
