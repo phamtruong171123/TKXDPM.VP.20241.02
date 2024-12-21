@@ -11,10 +11,7 @@ import isd.aims.main.views.BaseForm;
 import isd.aims.main.views.cart.CartForm;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -56,6 +53,9 @@ public class HomeForm extends BaseForm implements Initializable {
 
     @FXML
     private HBox hboxMedia;
+
+    @FXML
+    private TextField textFieldSearchBar;
 
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
@@ -115,6 +115,12 @@ public class HomeForm extends BaseForm implements Initializable {
             }
         });
 
+        // Add event listener to SplitMenuButton
+        splitMenuBtnSearch.setOnAction(event -> {
+            String selectedCategory = textFieldSearchBar.getText();
+            filterMediaByCategory(selectedCategory);
+        });
+
         addMediaHome(this.homeItems);
         addMenuItem(0, "Book", splitMenuBtnSearch);
         addMenuItem(1, "DVD", splitMenuBtnSearch);
@@ -135,6 +141,8 @@ public class HomeForm extends BaseForm implements Initializable {
     @SuppressWarnings("rawtypes")
     public void addMediaHome(List items){
         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
+        int numberOfMedia = mediaItems.size();
+        System.out.println(numberOfMedia);
         hboxMedia.getChildren().forEach(node -> {
             VBox vBox = (VBox) node;
             vBox.getChildren().clear();
@@ -143,7 +151,9 @@ public class HomeForm extends BaseForm implements Initializable {
             hboxMedia.getChildren().forEach(node -> {
                 int vid = hboxMedia.getChildren().indexOf(node);
                 VBox vBox = (VBox) node;
-                while(vBox.getChildren().size() < 3 && !mediaItems.isEmpty()){
+
+                // Chia ra 4 cột nên chia 4
+                while(vBox.getChildren().size() < ((numberOfMedia + 3) / 4) && !mediaItems.isEmpty()){
                     MediaForm media = (MediaForm) mediaItems.get(0);
                     vBox.getChildren().add(media.getContent());
                     mediaItems.remove(media);
@@ -181,5 +191,23 @@ public class HomeForm extends BaseForm implements Initializable {
             addMediaHome(filteredItems);
         });
         menuButton.getItems().add(position, menuItem);
+    }
+
+    // Helper method to filter media by category
+    private void filterMediaByCategory(String category) {
+        hboxMedia.getChildren().forEach(node -> {
+            VBox vBox = (VBox) node;
+            vBox.getChildren().clear();
+        });
+
+        List filteredItems = new ArrayList<>();
+        for (Object object : homeItems) {
+            MediaForm media = (MediaForm) object;
+            if (media.getMedia().getTitle().toLowerCase().contains(category.toLowerCase())){
+                filteredItems.add(media);
+            }
+        }
+
+        addMediaHome(filteredItems);
     }
 }
