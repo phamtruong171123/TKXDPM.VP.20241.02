@@ -11,8 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.ScrollPane?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0"
-   xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- Header -->
       <HBox prefHeight="104.0" prefWidth="1326.0"
@@ -46,7 +47,7 @@
                <children>
                   <Pane prefHeight="102.0" prefWidth="562.0">
                      <children>
-                        <TextField layoutX="17.0" layoutY="27.0" prefHeight="48.0" prefWidth="528.0">
+                        <TextField fx:id="textFieldSearchBar" layoutX="17.0" layoutY="27.0" prefHeight="48.0" prefWidth="528.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -91,16 +92,15 @@
       </HBox>
 
       <!-- Body -->
-      <HBox fx:id="hboxMedia" layoutX="24.0" layoutY="123.0" prefHeight="629.0" prefWidth="1283.0">
-         <children>
-            <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0"
-               style="-fx-border-color: #33adff;" />
-            <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0"
-               style="-fx-border-color: #33adff;" />
-            <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0"
-               style="-fx-border-color: #33adff;" />
-            <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
-         </children>
-      </HBox>
+      <ScrollPane layoutX="24.0" layoutY="123.0" prefHeight="629.0" prefWidth="1300.0">
+         <HBox fx:id="hboxMedia" prefHeight="629.0" prefWidth="1283.0">
+            <children>
+               <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
+               <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+               <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+               <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+            </children>
+         </HBox>
+      </ScrollPane>
    </children>
 </AnchorPane>
