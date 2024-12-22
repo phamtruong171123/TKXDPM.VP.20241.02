@@ -18,7 +18,7 @@
       <ImageView fx:id="aimsImage" fitHeight="73.0" fitWidth="73.0" layoutX="-6.0" layoutY="8.0"
                  pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
-            <Image url="@../fxml/images/Logo.png" />
+            <Image url="@images/Logo.png" />
          </image>
       </ImageView>
 
@@ -54,7 +54,7 @@
                      </font>
                   </Label>
                   <Label fx:id="labelSubtotal" prefHeight="55.0" prefWidth="239.0"
-                     text="1000000 VND" textFill="#5091e6">
+                     text="0 VND" textFill="#5091e6">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -75,8 +75,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelVAT" prefHeight="58.0" prefWidth="167.0" text="1000 VND"
-                     textFill="#5091e6">
+                  <Label fx:id="labelVAT" prefHeight="58.0" prefWidth="167.0" text="0 VND" textFill="#5091e6">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -92,7 +91,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelAmount" prefHeight="45.0" prefWidth="206.0" text="1100000 VND"
+                  <Label fx:id="labelAmount" prefHeight="45.0" prefWidth="206.0" text="0 VND"
                      textFill="#5091e6">
                      <font>
                         <Font size="24.0" />
@@ -105,8 +104,7 @@
             <AnchorPane prefHeight="138.0" prefWidth="344.0">
                <children>
                   <Button fx:id="btnPlaceOrder" alignment="CENTER" contentDisplay="CENTER"
-                     layoutX="14.0" layoutY="75.0" mnemonicParsing="false"
-                     onMouseClicked="#requestToPlaceOrder" prefHeight="55.0" prefWidth="316.0"
+                     layoutX="14.0" layoutY="75.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="316.0"
                      style="-fx-background-color: #5091e6; -fx-cursor: hand;" text="Place order"
                      textFill="WHITE">
                      <font>

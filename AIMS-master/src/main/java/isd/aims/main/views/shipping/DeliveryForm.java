@@ -63,36 +63,36 @@ public class DeliveryForm extends BaseForm implements Initializable {
 	}
 
 	@FXML
-	void submitDeliveryInfo(MouseEvent event) throws IOException, InterruptedException, SQLException {
-
-		// add info to messages
-		HashMap<String, String> messages = new HashMap<>();
-		messages.put("name", name.getText());
-		messages.put("phone", phone.getText());
-		messages.put("address", address.getText());
-		messages.put("instructions", instructions.getText());
-		messages.put("province", province.getValue());
-		try {
-			// process and validate delivery info
-			getBController().processDeliveryInfo(messages);
-		} catch (InvalidDeliveryInfoException e) {
-			throw new InvalidDeliveryInfoException(e.getMessage());
-		}
-
-		// calculate shipping fees
-		int shippingFees = getBController().calculateShippingFee(order);
-		order.setShippingFees(shippingFees);
-		order.setDeliveryInfo(messages);
-
-		// create invoice screen
-		Invoice invoice = getBController().createInvoice(order);
-		BaseForm InvoiceScreenHandler = new InvoiceForm(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
-		InvoiceScreenHandler.setPreviousScreen(this);
-		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
-		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
-		InvoiceScreenHandler.setBController(getBController());
-		InvoiceScreenHandler.show();
-	}
+//	void submitDeliveryInfo(MouseEvent event) throws IOException, InterruptedException, SQLException {
+//
+//		// add info to messages
+//		HashMap<String, String> messages = new HashMap<>();
+//		messages.put("name", name.getText());
+//		messages.put("phone", phone.getText());
+//		messages.put("address", address.getText());
+//		messages.put("instructions", instructions.getText());
+//		messages.put("province", province.getValue());
+//		try {
+//			// process and validate delivery info
+//			getBController().processDeliveryInfo(messages);
+//		} catch (InvalidDeliveryInfoException e) {
+//			throw new InvalidDeliveryInfoException(e.getMessage());
+//		}
+//
+//		// calculate shipping fees
+//		int shippingFees = getBController().calculateShippingFee(order);
+//		order.setShippingFees(shippingFees);
+//		order.setDeliveryInfo(messages);
+//
+//		// create invoice screen
+//		Invoice invoice = getBController().createInvoice(order);
+//		BaseForm InvoiceScreenHandler = new InvoiceForm(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
+//		InvoiceScreenHandler.setPreviousScreen(this);
+//		InvoiceScreenHandler.setHomeScreenHandler(homeScreenHandler);
+//		InvoiceScreenHandler.setScreenTitle("Invoice Screen");
+//		InvoiceScreenHandler.setBController(getBController());
+//		InvoiceScreenHandler.show();
+//	}
 
 	public PlaceOrderController getBController(){
 		return (PlaceOrderController) super.getBController();

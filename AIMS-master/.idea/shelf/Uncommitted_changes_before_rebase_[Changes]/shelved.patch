@@ -1,0 +1,511 @@
+Index: src/main/resources/isd/aims/main/fxml/home.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.SplitMenuButton?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<?import javafx.scene.control.ScrollPane?>\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" prefHeight=\"788.0\" prefWidth=\"1326.0\"\r\n            xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <!-- Header -->\r\n      <HBox prefHeight=\"104.0\" prefWidth=\"1326.0\"\r\n         style=\"-fx-background-color: #ccebff; -fx-border-color: #33adff;\">\r\n         <children>\r\n            <!-- Logo -->\r\n            <VBox prefHeight=\"102.0\" prefWidth=\"231.0\">\r\n               <children>\r\n                  <Pane prefHeight=\"102.0\" prefWidth=\"237.0\">\r\n                     <children>\r\n                        <ImageView fx:id=\"aimsImage\" fitHeight=\"94.0\" fitWidth=\"115.0\" layoutY=\"1.0\"\r\n                           pickOnBounds=\"true\" preserveRatio=\"true\" style=\"-fx-cursor: hand;\">\r\n                           <image>\r\n                              <Image\r\n                                 url=\"@../fxml/images/Logo.png\" />\r\n                           </image>\r\n                        </ImageView>\r\n                        <Label layoutX=\"6.0\" layoutY=\"68.0\" prefHeight=\"41.0\" prefWidth=\"100.0\"\r\n                           text=\"    AIMS\" textAlignment=\"CENTER\" textFill=\"#5091e6\">\r\n                           <font>\r\n                              <Font size=\"24.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                  </Pane>\r\n               </children>\r\n            </VBox>\r\n\r\n            <!-- Search bar -->\r\n            <HBox prefHeight=\"102.0\" prefWidth=\"882.0\">\r\n               <children>\r\n                  <Pane prefHeight=\"102.0\" prefWidth=\"562.0\">\r\n                     <children>\r\n                        <TextField fx:id=\"textFieldSearchBar\" layoutX=\"17.0\" layoutY=\"27.0\" prefHeight=\"48.0\" prefWidth=\"528.0\">\r\n                           <font>\r\n                              <Font size=\"18.0\" />\r\n                           </font>\r\n                        </TextField>\r\n                     </children>\r\n                  </Pane>\r\n                  <Pane prefHeight=\"102.0\" prefWidth=\"158.0\">\r\n                     <children>\r\n                        <SplitMenuButton fx:id=\"splitMenuBtnSearch\" layoutY=\"27.0\"\r\n                           mnemonicParsing=\"false\" prefHeight=\"48.0\" prefWidth=\"124.0\" text=\"Search\">\r\n                           <items>\r\n                           </items>\r\n                           <font>\r\n                              <Font size=\"16.0\" />\r\n                           </font>\r\n                        </SplitMenuButton>\r\n                     </children>\r\n                  </Pane>\r\n               </children>\r\n            </HBox>\r\n\r\n            <!-- Cart -->\r\n            <VBox prefHeight=\"102.0\" prefWidth=\"161.0\">\r\n               <children>\r\n                  <Pane prefHeight=\"200.0\" prefWidth=\"200.0\">\r\n                     <children>\r\n                        <ImageView fx:id=\"cartImage\" fitHeight=\"75.0\" fitWidth=\"64.0\" layoutX=\"14.0\"\r\n                           layoutY=\"19.0\" pickOnBounds=\"true\" preserveRatio=\"true\"\r\n                           style=\"-fx-cursor: hand;\">\r\n                           <image>\r\n                              <Image\r\n                                 url=\"@../fxml/images/cart.png\" />\r\n                           </image>\r\n                        </ImageView>\r\n                        <Label fx:id=\"numMediaInCart\" layoutX=\"24.0\" layoutY=\"11.0\"\r\n                           prefHeight=\"16.0\" prefWidth=\"64.0\" text=\"0 media\" textFill=\"#5091e6\" />\r\n                     </children>\r\n                  </Pane>\r\n               </children>\r\n            </VBox>\r\n         </children>\r\n      </HBox>\r\n\r\n      <!-- Body -->\r\n      <ScrollPane layoutX=\"24.0\" layoutY=\"123.0\" prefHeight=\"629.0\" prefWidth=\"1300.0\">\r\n         <HBox fx:id=\"hboxMedia\" prefHeight=\"629.0\" prefWidth=\"1283.0\">\r\n            <children>\r\n               <VBox fx:id=\"vboxMedia1\" prefHeight=\"629.0\" prefWidth=\"321.0\" style=\"-fx-border-color: #33adff;\" />\r\n               <VBox fx:id=\"vboxMedia2\" prefHeight=\"629.0\" prefWidth=\"320.0\" style=\"-fx-border-color: #33adff;\" />\r\n               <VBox fx:id=\"vboxMedia3\" prefHeight=\"629.0\" prefWidth=\"320.0\" style=\"-fx-border-color: #33adff;\" />\r\n               <VBox prefHeight=\"629.0\" prefWidth=\"320.0\" style=\"-fx-border-color: #33adff;\" />\r\n            </children>\r\n         </HBox>\r\n      </ScrollPane>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/isd/aims/main/fxml/home.fxml b/src/main/resources/isd/aims/main/fxml/home.fxml
+--- a/src/main/resources/isd/aims/main/fxml/home.fxml	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/resources/isd/aims/main/fxml/home.fxml	(date 1734855612184)
+@@ -1,5 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import java.lang.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
+ <?import javafx.scene.control.Label?>
+ <?import javafx.scene.control.SplitMenuButton?>
+ <?import javafx.scene.control.TextField?>
+@@ -10,29 +15,25 @@
+ <?import javafx.scene.layout.Pane?>
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.text.Font?>
+-
+ <?import javafx.scene.control.ScrollPane?>
+-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0"
+-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
++<?import javafx.scene.shape.Box?>
++
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="820.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+       <!-- Header -->
+-      <HBox prefHeight="104.0" prefWidth="1326.0"
+-         style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
++      <HBox prefHeight="104.0" prefWidth="1326.0" style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
+          <children>
+             <!-- Logo -->
+             <VBox prefHeight="102.0" prefWidth="231.0">
+                <children>
+                   <Pane prefHeight="102.0" prefWidth="237.0">
+                      <children>
+-                        <ImageView fx:id="aimsImage" fitHeight="94.0" fitWidth="115.0" layoutY="1.0"
+-                           pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
++                        <ImageView fx:id="aimsImage" fitHeight="94.0" fitWidth="115.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                            <image>
+-                              <Image
+-                                 url="@../fxml/images/Logo.png" />
++                              <Image url="@../fxml/images/Logo.png" />
+                            </image>
+                         </ImageView>
+-                        <Label layoutX="6.0" layoutY="68.0" prefHeight="41.0" prefWidth="100.0"
+-                           text="    AIMS" textAlignment="CENTER" textFill="#5091e6">
++                        <Label layoutX="6.0" layoutY="68.0" prefHeight="41.0" prefWidth="100.0" text="    AIMS" textAlignment="CENTER" textFill="#5091e6">
+                            <font>
+                               <Font size="24.0" />
+                            </font>
+@@ -42,9 +43,10 @@
+                </children>
+             </VBox>
+ 
+-            <!-- Search bar -->
++            <!-- Search -->
+             <HBox prefHeight="102.0" prefWidth="882.0">
+                <children>
++                  <!-- Search bar -->
+                   <Pane prefHeight="102.0" prefWidth="562.0">
+                      <children>
+                         <TextField fx:id="textFieldSearchBar" layoutX="17.0" layoutY="27.0" prefHeight="48.0" prefWidth="528.0">
+@@ -54,10 +56,11 @@
+                         </TextField>
+                      </children>
+                   </Pane>
++
++                  <!-- Search button -->
+                   <Pane prefHeight="102.0" prefWidth="158.0">
+                      <children>
+-                        <SplitMenuButton fx:id="splitMenuBtnSearch" layoutY="27.0"
+-                           mnemonicParsing="false" prefHeight="48.0" prefWidth="124.0" text="Search">
++                        <SplitMenuButton fx:id="splitMenuBtnSearch" layoutY="27.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="124.0" text="Search">
+                            <items>
+                            </items>
+                            <font>
+@@ -74,16 +77,12 @@
+                <children>
+                   <Pane prefHeight="200.0" prefWidth="200.0">
+                      <children>
+-                        <ImageView fx:id="cartImage" fitHeight="75.0" fitWidth="64.0" layoutX="14.0"
+-                           layoutY="19.0" pickOnBounds="true" preserveRatio="true"
+-                           style="-fx-cursor: hand;">
++                        <ImageView fx:id="cartImage" fitHeight="75.0" fitWidth="64.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                            <image>
+-                              <Image
+-                                 url="@../fxml/images/cart.png" />
++                              <Image url="@../fxml/images/cart.png" />
+                            </image>
+                         </ImageView>
+-                        <Label fx:id="numMediaInCart" layoutX="24.0" layoutY="11.0"
+-                           prefHeight="16.0" prefWidth="64.0" text="0 media" textFill="#5091e6" />
++                        <Label fx:id="numMediaInCart" layoutX="24.0" layoutY="11.0" prefHeight="16.0" prefWidth="64.0" text="0 media" textFill="#5091e6" />
+                      </children>
+                   </Pane>
+                </children>
+@@ -91,16 +90,31 @@
+          </children>
+       </HBox>
+ 
+-      <!-- Body -->
+-      <ScrollPane layoutX="24.0" layoutY="123.0" prefHeight="629.0" prefWidth="1300.0">
+-         <HBox fx:id="hboxMedia" prefHeight="629.0" prefWidth="1283.0">
+-            <children>
+-               <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
+-               <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+-               <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+-               <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
+-            </children>
+-         </HBox>
++      <!-- Sort -->
++      <HBox layoutX="1233.0" layoutY="123.0">
++         <children>
++            <SplitMenuButton fx:id="splitMenuBtnSort" mnemonicParsing="false" text="Sort">
++              <items>
++                 <MenuItem mnemonicParsing="false" text="Tên A đến Z" />
++                 <MenuItem mnemonicParsing="false" text="Tên Z đến A" />
++                 <MenuItem mnemonicParsing="false" text="Giá thấp đến cao" />
++                 <MenuItem mnemonicParsing="false" text="Giá cao xuống thấp" />
++              </items>
++            </SplitMenuButton>
++         </children>
++      </HBox>
++
++      <!-- Body -->
++      <ScrollPane layoutX="13.0" layoutY="165.0" prefHeight="629.0" prefWidth="1300.0">
++         <content>
++            <VBox fx:id="vboxMedia" prefHeight="629.0" prefWidth="1283.0">
++               <children>
++                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
++                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
++                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
++               </children>
++            </VBox>
++         </content>
+       </ScrollPane>
+    </children>
+ </AnchorPane>
+Index: src/main/java/isd/aims/main/views/home/HomeForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package isd.aims.main.views.home;\r\n\r\nimport isd.aims.main.exception.ViewCartException;\r\nimport isd.aims.main.controller.HomeController;\r\nimport isd.aims.main.controller.ViewCartController;\r\nimport isd.aims.main.entity.cart.Cart;\r\nimport isd.aims.main.entity.media.Media;\r\nimport isd.aims.main.utils.Configs;\r\nimport isd.aims.main.utils.Utils;\r\nimport isd.aims.main.views.BaseForm;\r\nimport isd.aims.main.views.cart.CartForm;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.layout.HBox;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.scene.text.TextAlignment;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.sql.SQLException;\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\nimport java.util.ResourceBundle;\r\nimport java.util.logging.Logger;\r\n\r\npublic class HomeForm extends BaseForm implements Initializable {\r\n\r\n    public static Logger LOGGER = Utils.getLogger(HomeForm.class.getName());\r\n\r\n    @FXML\r\n    private Label numMediaInCart;\r\n\r\n    @FXML\r\n    private ImageView aimsImage;\r\n\r\n    @FXML\r\n    private ImageView cartImage;\r\n\r\n    // @FXML\r\n    // private VBox vboxMedia1;\r\n\r\n    // @FXML\r\n    // private VBox vboxMedia2;\r\n\r\n    // @FXML\r\n    // private VBox vboxMedia3;\r\n\r\n    @FXML\r\n    private HBox hboxMedia;\r\n\r\n    @FXML\r\n    private TextField textFieldSearchBar;\r\n\r\n    @FXML\r\n    private SplitMenuButton splitMenuBtnSearch;\r\n\r\n    @SuppressWarnings(\"rawtypes\")\r\n    private List homeItems;\r\n\r\n    public HomeForm(Stage stage, String screenPath) throws IOException {\r\n        super(stage, screenPath);\r\n    }\r\n\r\n    public Label getNumMediaCartLabel(){\r\n        return this.numMediaInCart;\r\n    }\r\n\r\n    public HomeController getBController() {\r\n        return (HomeController) super.getBController();\r\n    }\r\n\r\n    @Override\r\n    public void show() {\r\n        numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()) + \" media\");\r\n        super.show();\r\n    }\r\n\r\n    @SuppressWarnings({ \"rawtypes\", \"unchecked\" })\r\n    @Override\r\n    public void initialize(URL arg0, ResourceBundle arg1) {\r\n        setBController(new HomeController());\r\n        try {\r\n            List medium = getBController().getAllMedia();\r\n            this.homeItems = new ArrayList();\r\n            for (Object object : medium) {\r\n                Media media = (Media) object;\r\n                MediaForm m1 = new MediaForm(Configs.HOME_MEDIA_PATH, media, this);\r\n                this.homeItems.add(m1);\r\n            }\r\n        } catch (SQLException | IOException e){\r\n            LOGGER.info(\"Errors occured: \" + e.getMessage());\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n        aimsImage.setOnMouseClicked(e -> {\r\n            addMediaHome(this.homeItems);\r\n        });\r\n\r\n        cartImage.setOnMouseClicked(e -> {\r\n            try {\r\n                LOGGER.info(\"User clicked to view cart\");\r\n                CartForm cartScreen = new CartForm(this.stage, Configs.CART_SCREEN_PATH);\r\n                cartScreen.setHomeScreenHandler(this);\r\n                cartScreen.setBController(new ViewCartController());\r\n                cartScreen.requestToViewCart(this);\r\n            } catch (IOException | SQLException e1) {\r\n                throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(\", \", \"\\n\"));\r\n            }\r\n        });\r\n\r\n        // Add event listener to SplitMenuButton\r\n        splitMenuBtnSearch.setOnAction(event -> {\r\n            String selectedCategory = textFieldSearchBar.getText();\r\n            filterMediaByCategory(selectedCategory);\r\n        });\r\n\r\n        addMediaHome(this.homeItems);\r\n        addMenuItem(0, \"Book\", splitMenuBtnSearch);\r\n        addMenuItem(1, \"DVD\", splitMenuBtnSearch);\r\n        addMenuItem(2, \"CD\", splitMenuBtnSearch);\r\n    }\r\n\r\n    public void setImage() {\r\n        // fix image path caused by fxml\r\n        File file1 = new File(Configs.IMAGE_PATH_ICON + \"/\" + \"Logo.png\");\r\n        Image img1 = new Image(file1.toURI().toString());\r\n        aimsImage.setImage(img1);\r\n\r\n        File file2 = new File(Configs.IMAGE_PATH_ICON + \"/\" + \"cart.png\");\r\n        Image img2 = new Image(file2.toURI().toString());\r\n        cartImage.setImage(img2);\r\n    }\r\n\r\n    @SuppressWarnings(\"rawtypes\")\r\n    public void addMediaHome(List items){\r\n        ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();\r\n        int numberOfMedia = mediaItems.size();\r\n        System.out.println(numberOfMedia);\r\n        hboxMedia.getChildren().forEach(node -> {\r\n            VBox vBox = (VBox) node;\r\n            vBox.getChildren().clear();\r\n        });\r\n        while(!mediaItems.isEmpty()){\r\n            hboxMedia.getChildren().forEach(node -> {\r\n                int vid = hboxMedia.getChildren().indexOf(node);\r\n                VBox vBox = (VBox) node;\r\n\r\n                // Chia ra 4 cột nên chia 4\r\n                while(vBox.getChildren().size() < ((numberOfMedia + 3) / 4) && !mediaItems.isEmpty()){\r\n                    MediaForm media = (MediaForm) mediaItems.get(0);\r\n                    vBox.getChildren().add(media.getContent());\r\n                    mediaItems.remove(media);\r\n                }\r\n            });\r\n            return;\r\n        }\r\n    }\r\n\r\n    @SuppressWarnings({ \"rawtypes\", \"unchecked\" })\r\n    private void addMenuItem(int position, String text, MenuButton menuButton){\r\n        MenuItem menuItem = new MenuItem();\r\n        Label label = new Label();\r\n        label.prefWidthProperty().bind(menuButton.widthProperty().subtract(31));\r\n        label.setText(text);\r\n        label.setTextAlignment(TextAlignment.RIGHT);\r\n        menuItem.setGraphic(label);\r\n        menuItem.setOnAction(e -> {\r\n            // empty home media\r\n            hboxMedia.getChildren().forEach(node -> {\r\n                VBox vBox = (VBox) node;\r\n                vBox.getChildren().clear();\r\n            });\r\n\r\n            // filter only media with the choosen category\r\n            List filteredItems = new ArrayList<>();\r\n            homeItems.forEach(me -> {\r\n                MediaForm media = (MediaForm) me;\r\n                if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){\r\n                    filteredItems.add(media);\r\n                }\r\n            });\r\n\r\n            // fill out the home with filted media as category\r\n            addMediaHome(filteredItems);\r\n        });\r\n        menuButton.getItems().add(position, menuItem);\r\n    }\r\n\r\n    // Helper method to filter media by category\r\n    private void filterMediaByCategory(String category) {\r\n        hboxMedia.getChildren().forEach(node -> {\r\n            VBox vBox = (VBox) node;\r\n            vBox.getChildren().clear();\r\n        });\r\n\r\n        List filteredItems = new ArrayList<>();\r\n        for (Object object : homeItems) {\r\n            MediaForm media = (MediaForm) object;\r\n            if (media.getMedia().getTitle().toLowerCase().contains(category.toLowerCase())){\r\n                filteredItems.add(media);\r\n            }\r\n        }\r\n\r\n        addMediaHome(filteredItems);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/isd/aims/main/views/home/HomeForm.java b/src/main/java/isd/aims/main/views/home/HomeForm.java
+--- a/src/main/java/isd/aims/main/views/home/HomeForm.java	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/java/isd/aims/main/views/home/HomeForm.java	(date 1734855458515)
+@@ -42,17 +42,8 @@
+     @FXML
+     private ImageView cartImage;
+ 
+-    // @FXML
+-    // private VBox vboxMedia1;
+-
+-    // @FXML
+-    // private VBox vboxMedia2;
+-
+-    // @FXML
+-    // private VBox vboxMedia3;
+-
+     @FXML
+-    private HBox hboxMedia;
++    private VBox vboxMedia;
+ 
+     @FXML
+     private TextField textFieldSearchBar;
+@@ -60,6 +51,9 @@
+     @FXML
+     private SplitMenuButton splitMenuBtnSearch;
+ 
++    @FXML
++    private SplitMenuButton splitMenuBtnSort;
++
+     @SuppressWarnings("rawtypes")
+     private List homeItems;
+ 
+@@ -98,11 +92,11 @@
+             e.printStackTrace();
+         }
+ 
+-
+         aimsImage.setOnMouseClicked(e -> {
+             addMediaHome(this.homeItems);
+         });
+ 
++        // Add event listener to Open Cart
+         cartImage.setOnMouseClicked(e -> {
+             try {
+                 LOGGER.info("User clicked to view cart");
+@@ -115,12 +109,39 @@
+             }
+         });
+ 
+-        // Add event listener to SplitMenuButton
++        // Add event listener to SplitMenuButtonSearch
+         splitMenuBtnSearch.setOnAction(event -> {
+             String selectedCategory = textFieldSearchBar.getText();
+             filterMediaByCategory(selectedCategory);
+         });
+ 
++        // Add event listener to SplitMenuBtnSort
++        for (MenuItem item : splitMenuBtnSort.getItems()) {
++            item.setOnAction(event -> {
++                String selectedText = item.getText();
++
++                // Sử dụng các hàm sắp xếp tương ứng
++                switch (selectedText) {
++                    case "Tên A đến Z":
++                        sortByName(true);
++                        break;
++                    case "Tên Z đến A":
++                        sortByName(false);
++                        break;
++                    case "Giá thấp đến cao":
++                        sortByPrice(true);
++                        break;
++                    case "Giá cao xuống thấp":
++                        sortByPrice(false);
++                        break;
++                }
++
++                // Cập nhật giao diện
++                addMediaHome(homeItems);
++                LOGGER.info("Sorted media by: " + selectedText);
++            });
++        }
++
+         addMediaHome(this.homeItems);
+         addMenuItem(0, "Book", splitMenuBtnSearch);
+         addMenuItem(1, "DVD", splitMenuBtnSearch);
+@@ -143,23 +164,22 @@
+         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
+         int numberOfMedia = mediaItems.size();
+         System.out.println(numberOfMedia);
+-        hboxMedia.getChildren().forEach(node -> {
+-            VBox vBox = (VBox) node;
+-            vBox.getChildren().clear();
+-        });
+-        while(!mediaItems.isEmpty()){
+-            hboxMedia.getChildren().forEach(node -> {
+-                int vid = hboxMedia.getChildren().indexOf(node);
+-                VBox vBox = (VBox) node;
++
++        vboxMedia.getChildren().clear();
++        while (!mediaItems.isEmpty()) {
++            // Tạo hàng
++            HBox newHBox = new HBox();
++            newHBox.setPrefWidth(321.0);
++            newHBox.setPrefHeight(629.0);
++            newHBox.setStyle("-fx-border-color: #33adff;");
+ 
+-                // Chia ra 4 cột nên chia 4
+-                while(vBox.getChildren().size() < ((numberOfMedia + 3) / 4) && !mediaItems.isEmpty()){
+-                    MediaForm media = (MediaForm) mediaItems.get(0);
+-                    vBox.getChildren().add(media.getContent());
+-                    mediaItems.remove(media);
+-                }
+-            });
+-            return;
++            while (newHBox.getChildren().size() < 4 && !mediaItems.isEmpty()) {
++                MediaForm media = (MediaForm) mediaItems.get(0);
++                newHBox.getChildren().add(media.getContent());
++                mediaItems.remove(media);
++            }
++
++            vboxMedia.getChildren().add(newHBox);
+         }
+     }
+ 
+@@ -173,9 +193,9 @@
+         menuItem.setGraphic(label);
+         menuItem.setOnAction(e -> {
+             // empty home media
+-            hboxMedia.getChildren().forEach(node -> {
+-                VBox vBox = (VBox) node;
+-                vBox.getChildren().clear();
++            vboxMedia.getChildren().forEach(node -> {
++                HBox hBox = (HBox) node;
++                hBox.getChildren().clear();
+             });
+ 
+             // filter only media with the choosen category
+@@ -195,9 +215,9 @@
+ 
+     // Helper method to filter media by category
+     private void filterMediaByCategory(String category) {
+-        hboxMedia.getChildren().forEach(node -> {
+-            VBox vBox = (VBox) node;
+-            vBox.getChildren().clear();
++        vboxMedia.getChildren().forEach(node -> {
++            HBox hBox = (HBox) node;
++            hBox.getChildren().clear();
+         });
+ 
+         List filteredItems = new ArrayList<>();
+@@ -210,4 +230,24 @@
+ 
+         addMediaHome(filteredItems);
+     }
++
++    // Sắp xếp theo tên (tăng dần hoặc giảm dần)
++    private void sortByName(boolean ascending) {
++        homeItems.sort((o1, o2) -> {
++            MediaForm media1 = (MediaForm) o1;
++            MediaForm media2 = (MediaForm) o2;
++            int comparison = media1.getMedia().getTitle().compareToIgnoreCase(media2.getMedia().getTitle());
++            return ascending ? comparison : -comparison;
++        });
++    }
++
++    // Sắp xếp theo giá (tăng dần hoặc giảm dần)
++    private void sortByPrice(boolean ascending) {
++        homeItems.sort((o1, o2) -> {
++            MediaForm media1 = (MediaForm) o1;
++            MediaForm media2 = (MediaForm) o2;
++            int comparison = Double.compare(media1.getMedia().getPrice(), media2.getMedia().getPrice());
++            return ascending ? comparison : -comparison;
++        });
++    }
+ }
+Index: src/main/resources/isd/aims/main/fxml/cart.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.ScrollPane?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\"\r\n   prefHeight=\"768.0\" prefWidth=\"1366.0\" xmlns=\"http://javafx.com/javafx/11.0.1\"\r\n   xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <!-- Back to Home -->\r\n      <ImageView fx:id=\"aimsImage\" fitHeight=\"73.0\" fitWidth=\"73.0\" layoutX=\"-6.0\" layoutY=\"8.0\"\r\n                 pickOnBounds=\"true\" preserveRatio=\"true\" style=\"-fx-cursor: hand;\">\r\n         <image>\r\n            <Image url=\"@../fxml/images/Logo.png\" />\r\n         </image>\r\n      </ImageView>\r\n\r\n      <!-- TITLE: CART -->\r\n      <Label fx:id=\"pageTitle\" layoutX=\"60.0\" layoutY=\"-9.0\" prefHeight=\"96.0\" prefWidth=\"128.0\"\r\n         text=\"CART\" textAlignment=\"CENTER\" textFill=\"#5091e6\">\r\n         <font>\r\n            <Font name=\"Segoe UI Semibold\" size=\"42.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n\r\n      <ScrollPane hbarPolicy=\"NEVER\" layoutX=\"14.0\" layoutY=\"70.0\" maxHeight=\"-Infinity\"\r\n         maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"678.0\"\r\n         prefWidth=\"987.0\">\r\n         <content>\r\n            <VBox fx:id=\"vboxCart\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\"\r\n               minWidth=\"-Infinity\" prefWidth=\"567.0\" />\r\n         </content>\r\n      </ScrollPane>\r\n\r\n      <!-- Tính tiền -->\r\n      <VBox layoutX=\"1012.0\" layoutY=\"70.0\" prefHeight=\"288.0\" prefWidth=\"344.0\">\r\n         <children>\r\n            <!-- Subtotal -->\r\n            <HBox prefHeight=\"56.0\" prefWidth=\"316.0\">\r\n               <children>\r\n                  <Label fx:id=\"subtotal\" maxHeight=\"-Infinity\" maxWidth=\"-Infinity\"\r\n                     minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"55.0\" prefWidth=\"163.0\"\r\n                     text=\"Subtotal:\" textAlignment=\"CENTER\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Label fx:id=\"labelSubtotal\" prefHeight=\"55.0\" prefWidth=\"239.0\"\r\n                     text=\"1000000 VND\" textFill=\"#5091e6\">\r\n                     <font>\r\n                        <Font size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </HBox>\r\n\r\n            <!-- VAT -->\r\n            <HBox prefHeight=\"83.0\" prefWidth=\"344.0\">\r\n               <children>\r\n                  <Label prefHeight=\"58.0\" prefWidth=\"54.0\" text=\"VAT\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Label prefHeight=\"58.0\" prefWidth=\"106.0\" text=\"(10%):\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Label fx:id=\"labelVAT\" prefHeight=\"58.0\" prefWidth=\"167.0\" text=\"1000 VND\"\r\n                     textFill=\"#5091e6\">\r\n                     <font>\r\n                        <Font size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </HBox>\r\n\r\n            <!-- Amount -->\r\n            <HBox prefHeight=\"70.0\" prefWidth=\"344.0\">\r\n               <children>\r\n                  <Label contentDisplay=\"CENTER\" prefHeight=\"45.0\" prefWidth=\"180.0\" text=\"Amount:\">\r\n                     <font>\r\n                        <Font name=\"System Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n                  <Label fx:id=\"labelAmount\" prefHeight=\"45.0\" prefWidth=\"206.0\" text=\"1100000 VND\"\r\n                     textFill=\"#5091e6\">\r\n                     <font>\r\n                        <Font size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n            </HBox>\r\n\r\n            <!-- Button Place order -->\r\n            <AnchorPane prefHeight=\"138.0\" prefWidth=\"344.0\">\r\n               <children>\r\n                  <Button fx:id=\"btnPlaceOrder\" alignment=\"CENTER\" contentDisplay=\"CENTER\"\r\n                     layoutX=\"14.0\" layoutY=\"75.0\" mnemonicParsing=\"false\"\r\n                     onMouseClicked=\"#requestToPlaceOrder\" prefHeight=\"55.0\" prefWidth=\"316.0\"\r\n                     style=\"-fx-background-color: #5091e6; -fx-cursor: hand;\" text=\"Place order\"\r\n                     textFill=\"WHITE\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Button>\r\n               </children>\r\n            </AnchorPane>\r\n         </children>\r\n      </VBox>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/isd/aims/main/fxml/cart.fxml b/src/main/resources/isd/aims/main/fxml/cart.fxml
+--- a/src/main/resources/isd/aims/main/fxml/cart.fxml	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/resources/isd/aims/main/fxml/cart.fxml	(date 1734855665866)
+@@ -18,7 +18,7 @@
+       <ImageView fx:id="aimsImage" fitHeight="73.0" fitWidth="73.0" layoutX="-6.0" layoutY="8.0"
+                  pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+          <image>
+-            <Image url="@../fxml/images/Logo.png" />
++            <Image url="@images/Logo.png" />
+          </image>
+       </ImageView>
+ 
+@@ -54,7 +54,7 @@
+                      </font>
+                   </Label>
+                   <Label fx:id="labelSubtotal" prefHeight="55.0" prefWidth="239.0"
+-                     text="1000000 VND" textFill="#5091e6">
++                     text="0 VND" textFill="#5091e6">
+                      <font>
+                         <Font size="24.0" />
+                      </font>
+@@ -75,8 +75,7 @@
+                         <Font name="System Bold" size="24.0" />
+                      </font>
+                   </Label>
+-                  <Label fx:id="labelVAT" prefHeight="58.0" prefWidth="167.0" text="1000 VND"
+-                     textFill="#5091e6">
++                  <Label fx:id="labelVAT" prefHeight="58.0" prefWidth="167.0" text="0 VND" textFill="#5091e6">
+                      <font>
+                         <Font size="24.0" />
+                      </font>
+@@ -92,7 +91,7 @@
+                         <Font name="System Bold" size="24.0" />
+                      </font>
+                   </Label>
+-                  <Label fx:id="labelAmount" prefHeight="45.0" prefWidth="206.0" text="1100000 VND"
++                  <Label fx:id="labelAmount" prefHeight="45.0" prefWidth="206.0" text="0 VND"
+                      textFill="#5091e6">
+                      <font>
+                         <Font size="24.0" />
+Index: src/main/java/isd/aims/main/views/cart/CartForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package isd.aims.main.views.cart;\r\n\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.sql.SQLException;\r\nimport java.util.Arrays;\r\nimport java.util.List;\r\nimport java.util.logging.Logger;\r\n\r\nimport isd.aims.main.exception.MediaNotAvailableException;\r\nimport isd.aims.main.exception.PlaceOrderException;\r\nimport isd.aims.main.controller.PlaceOrderController;\r\nimport isd.aims.main.controller.ViewCartController;\r\nimport isd.aims.main.entity.cart.CartMedia;\r\nimport isd.aims.main.entity.order.Order;\r\nimport isd.aims.main.utils.Configs;\r\nimport isd.aims.main.utils.Utils;\r\nimport isd.aims.main.views.BaseForm;\r\nimport isd.aims.main.views.popup.PopupForm;\r\nimport isd.aims.main.views.shipping.DeliveryForm;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.stage.Stage;\r\n\r\npublic class CartForm extends BaseForm {\r\n\r\n\tprivate static Logger LOGGER = Utils.getLogger(CartForm.class.getName());\r\n\r\n\t@FXML\r\n\tprivate ImageView aimsImage;\r\n\r\n\t@FXML\r\n\tprivate Label pageTitle;\r\n\r\n\t@FXML\r\n\tVBox vboxCart;\r\n\r\n\t@FXML\r\n\tprivate Label shippingFees;\r\n\r\n\t@FXML\r\n\tprivate Label labelAmount;\r\n\r\n\t@FXML\r\n\tprivate Label labelSubtotal;\r\n\r\n\t@FXML\r\n\tprivate Label labelVAT;\r\n\r\n\t@FXML\r\n\tprivate Button btnPlaceOrder;\r\n\r\n\tpublic CartForm(Stage stage, String screenPath) throws IOException {\r\n\t\tsuper(stage, screenPath);\r\n\r\n\t\t// fix relative image path caused by fxml\r\n//\t\tFile file = new File(\"isd/aims/main/fxml/images/Logo.png\");\r\n//\t\tImage im = new Image(file.toURI().toString());\r\n//\t\taimsImage.setImage(im);\r\n\r\n\t\t// on mouse clicked, we back to home\r\n\t\taimsImage.setOnMouseClicked(e -> {\r\n\t\t\thomeScreenHandler.show();\r\n\t\t});\r\n\r\n\t\t// on mouse clicked, we start processing place order usecase\r\n\t\tbtnPlaceOrder.setOnMouseClicked(e -> {\r\n\t\t\tLOGGER.info(\"Place Order button clicked\");\r\n\t\t\ttry {\r\n\t\t\t\trequestToPlaceOrder();\r\n\t\t\t} catch (SQLException | IOException exp) {\r\n\t\t\t\tLOGGER.severe(\"Cannot place the order, see the logs\");\r\n\t\t\t\texp.printStackTrace();\r\n\t\t\t\tthrow new PlaceOrderException(Arrays.toString(exp.getStackTrace()).replaceAll(\", \", \"\\n\"));\r\n\t\t\t}\r\n\r\n\t\t});\r\n\t}\r\n\r\n\tpublic Label getLabelAmount() {\r\n\t\treturn labelAmount;\r\n\t}\r\n\r\n\tpublic Label getLabelSubtotal() {\r\n\t\treturn labelSubtotal;\r\n\t}\r\n\r\n\tpublic ViewCartController getBController(){\r\n\t\treturn (ViewCartController) super.getBController();\r\n\t}\r\n\r\n\tpublic void requestToViewCart(BaseForm prevScreen) throws SQLException {\r\n\t\tsetPreviousScreen(prevScreen);\r\n\t\tsetScreenTitle(\"Cart Screen\");\r\n\t\tgetBController().checkAvailabilityOfProduct();\r\n\t\tdisplayCartWithMediaAvailability();\r\n\t\tshow();\r\n\t}\r\n\r\n\tpublic void requestToPlaceOrder() throws SQLException, IOException {\r\n\t\ttry {\r\n\t\t\t// create placeOrderController and process the order\r\n\t\t\tPlaceOrderController placeOrderController = new PlaceOrderController();\r\n\t\t\tif (placeOrderController.getListCartMedia().isEmpty()){\r\n\t\t\t\tPopupForm.error(\"You don't have anything to place\");\r\n\t\t\t\treturn;\r\n\t\t\t}\r\n\r\n\t\t\tplaceOrderController.placeOrder();\r\n\r\n\t\t\t// display available media\r\n\t\t\tdisplayCartWithMediaAvailability();\r\n\r\n\t\t\t// create order\r\n\t\t\tOrder order = placeOrderController.createOrder();\r\n\r\n\t\t\t// display shipping form\r\n\t\t\tDeliveryForm DeliveryFormHandler = new DeliveryForm(this.stage, Configs.SHIPPING_SCREEN_PATH, order);\r\n\t\t\tDeliveryFormHandler.setPreviousScreen(this);\r\n\t\t\tDeliveryFormHandler.setHomeScreenHandler(homeScreenHandler);\r\n\t\t\tDeliveryFormHandler.setScreenTitle(\"Shipping Screen\");\r\n\t\t\tDeliveryFormHandler.setBController(placeOrderController);\r\n\t\t\tDeliveryFormHandler.show();\r\n\r\n\t\t} catch (MediaNotAvailableException e) {\r\n\t\t\t// if some media are not available then display cart and break usecase Place Order\r\n\t\t\tdisplayCartWithMediaAvailability();\r\n\t\t}\r\n\t}\r\n\r\n\tpublic void updateCart() throws SQLException{\r\n\t\tgetBController().checkAvailabilityOfProduct();\r\n\t\tdisplayCartWithMediaAvailability();\r\n\t}\r\n\r\n\tvoid updateCartAmount(){\r\n\t\t// calculate subtotal and amount\r\n\t\tint subtotal = getBController().getCartSubtotal();\r\n\t\tint vat = (int)((Configs.PERCENT_VAT/100)*subtotal);\r\n\t\tint amount = subtotal + vat;\r\n\t\tLOGGER.info(\"amount\" + amount);\r\n\r\n\t\t// update subtotal and amount of Cart\r\n\t\tlabelSubtotal.setText(Utils.getCurrencyFormat(subtotal));\r\n\t\tlabelVAT.setText(Utils.getCurrencyFormat(vat));\r\n\t\tlabelAmount.setText(Utils.getCurrencyFormat(amount));\r\n\t}\r\n\r\n\tprivate void displayCartWithMediaAvailability(){\r\n\t\t// clear all old cartMedia\r\n\t\tvboxCart.getChildren().clear();\r\n\r\n\t\t// get list media of cart after check availability\r\n\t\tList lstMedia = getBController().getListCartMedia();\r\n\t\tif (lstMedia == null || lstMedia.isEmpty()) {\r\n\t\t\tSystem.out.println(\"Danh sách cartMedia rỗng!\");\r\n\t\t\treturn;\r\n\t\t} else {\r\n\t\t\tSystem.out.println(\"Danh sách cartMedia: \" + lstMedia.size() + \" mục\");\r\n\t\t}\r\n\r\n\t\ttry {\r\n\t\t\tfor (Object cm : lstMedia) {\r\n\r\n\t\t\t\t// display the attribute of vboxCart media\r\n\t\t\t\tCartMedia cartMedia = (CartMedia) cm;\r\n\t\t\t\tMediaForm mediaCartScreen = new MediaForm(Configs.CART_MEDIA_PATH, this);\r\n\t\t\t\tmediaCartScreen.setCartMedia(cartMedia);\r\n\r\n\t\t\t\t// add spinner\r\n\t\t\t\tvboxCart.getChildren().add(mediaCartScreen.getContent());\r\n\t\t\t}\r\n\t\t\t// calculate subtotal and amount\r\n\t\t\tupdateCartAmount();\r\n\t\t} catch (IOException e) {\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/isd/aims/main/views/cart/CartForm.java b/src/main/java/isd/aims/main/views/cart/CartForm.java
+--- a/src/main/java/isd/aims/main/views/cart/CartForm.java	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/java/isd/aims/main/views/cart/CartForm.java	(date 1734856045066)
+@@ -150,6 +150,7 @@
+ 		labelAmount.setText(Utils.getCurrencyFormat(amount));
+ 	}
+ 
++	// Hiển thị mặt hàng đã chọn và giá tiền
+ 	private void displayCartWithMediaAvailability(){
+ 		// clear all old cartMedia
+ 		vboxCart.getChildren().clear();
+@@ -157,6 +158,9 @@
+ 		// get list media of cart after check availability
+ 		List lstMedia = getBController().getListCartMedia();
+ 		if (lstMedia == null || lstMedia.isEmpty()) {
++			labelAmount.setText(Utils.getCurrencyFormat(0));
++			labelVAT.setText(Utils.getCurrencyFormat(0));
++			labelSubtotal.setText(Utils.getCurrencyFormat(0));
+ 			System.out.println("Danh sách cartMedia rỗng!");
+ 			return;
+ 		} else {
+@@ -165,7 +169,6 @@
+ 
+ 		try {
+ 			for (Object cm : lstMedia) {
+-
+ 				// display the attribute of vboxCart media
+ 				CartMedia cartMedia = (CartMedia) cm;
+ 				MediaForm mediaCartScreen = new MediaForm(Configs.CART_MEDIA_PATH, this);
+Index: src/main/java/isd/aims/main/views/home/MediaForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package isd.aims.main.views.home;\r\n\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.sql.SQLException;\r\nimport java.util.logging.Logger;\r\n\r\nimport isd.aims.main.exception.MediaNotAvailableException;\r\nimport isd.aims.main.entity.cart.Cart;\r\nimport isd.aims.main.entity.cart.CartMedia;\r\nimport isd.aims.main.entity.media.Media;\r\nimport isd.aims.main.utils.Configs;\r\nimport isd.aims.main.utils.Utils;\r\nimport isd.aims.main.views.FXMLForm;\r\nimport isd.aims.main.views.popup.PopupForm;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.Spinner;\r\nimport javafx.scene.control.SpinnerValueFactory;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\n\r\npublic class MediaForm extends FXMLForm {\r\n\r\n    @FXML\r\n    protected ImageView mediaImage;\r\n\r\n    @FXML\r\n    protected Label mediaTitle;\r\n\r\n    @FXML\r\n    protected Label mediaPrice;\r\n\r\n    @FXML\r\n    protected Label mediaAvail;\r\n\r\n    @FXML\r\n    protected Spinner<Integer> spinnerChangeNumber;\r\n\r\n    @FXML\r\n    protected Button addToCartBtn;\r\n\r\n    private static Logger LOGGER = Utils.getLogger(MediaForm.class.getName());\r\n    private Media media;\r\n    private HomeForm home;\r\n\r\n    public MediaForm(String screenPath, Media media, HomeForm home) throws SQLException, IOException{\r\n        super(screenPath);\r\n        this.media = media;\r\n        this.home = home;\r\n\r\n        addToCartBtn.setOnMouseClicked(event -> {\r\n            try {\r\n                if (spinnerChangeNumber.getValue() > media.getQuantity()) throw new MediaNotAvailableException();\r\n                Cart cart = Cart.getCart();\r\n\r\n                // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia\r\n                CartMedia mediaInCart = home.getBController().checkMediaInCart(media);\r\n                if (mediaInCart != null) {\r\n                    mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);\r\n                } else {\r\n                    CartMedia cartMedia = new CartMedia(media, cart, spinnerChangeNumber.getValue(), media.getPrice());\r\n                    cart.getListMedia().add(cartMedia);\r\n                    LOGGER.info(\"Added \" + cartMedia.getQuantity() + \" \" + media.getTitle() + \" to cart\");\r\n                    System.out.println(\"Added \" + cartMedia.getQuantity() + \" \" + media.getTitle() + \" to cart\");\r\n                }\r\n\r\n                // subtract the quantity and redisplay\r\n                media.setQuantity(media.getQuantity() - spinnerChangeNumber.getValue());\r\n                mediaAvail.setText(String.valueOf(media.getQuantity()));\r\n                home.getNumMediaCartLabel().setText(String.valueOf(cart.getTotalMedia()) + \" media\");\r\n                PopupForm.success(\"The media \" + media.getTitle() + \" added to Cart\");\r\n            } catch (MediaNotAvailableException exp) {\r\n                try {\r\n                    String message = \"Not enough media:\\nRequired: \" + spinnerChangeNumber.getValue() + \"\\nAvail: \" + media.getQuantity();\r\n                    LOGGER.severe(message);\r\n                    PopupForm.error(message);\r\n                } catch (Exception e) {\r\n                    LOGGER.severe(\"Cannot add media to cart: \");\r\n                }\r\n\r\n            } catch (Exception exp) {\r\n                LOGGER.severe(\"Cannot add media to cart: \");\r\n                exp.printStackTrace();\r\n            }\r\n        });\r\n        setMediaInfo();\r\n    }\r\n\r\n    public Media getMedia(){\r\n        return media;\r\n    }\r\n\r\n    private void setMediaInfo() throws SQLException {\r\n        // set the cover image of media\r\n        File file = new File(Configs.IMAGE_PATH + media.getImageURL());\r\n        Image image = new Image(file.toURI().toString());\r\n        mediaImage.setFitHeight(160);\r\n        mediaImage.setFitWidth(152);\r\n        mediaImage.setImage(image);\r\n\r\n        mediaTitle.setText(media.getTitle());\r\n        mediaPrice.setText(Utils.getCurrencyFormat(media.getPrice()));\r\n        mediaAvail.setText(Integer.toString(media.getQuantity()));\r\n        spinnerChangeNumber.setValueFactory(\r\n            new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1)\r\n        );\r\n\r\n        // setImage(mediaImage, media.getImageURL());\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/isd/aims/main/views/home/MediaForm.java b/src/main/java/isd/aims/main/views/home/MediaForm.java
+--- a/src/main/java/isd/aims/main/views/home/MediaForm.java	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/java/isd/aims/main/views/home/MediaForm.java	(date 1734847982044)
+@@ -62,7 +62,6 @@
+                 } else {
+                     CartMedia cartMedia = new CartMedia(media, cart, spinnerChangeNumber.getValue(), media.getPrice());
+                     cart.getListMedia().add(cartMedia);
+-                    LOGGER.info("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
+                     System.out.println("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
+                 }
+ 
+@@ -70,6 +69,8 @@
+                 media.setQuantity(media.getQuantity() - spinnerChangeNumber.getValue());
+                 mediaAvail.setText(String.valueOf(media.getQuantity()));
+                 home.getNumMediaCartLabel().setText(String.valueOf(cart.getTotalMedia()) + " media");
++
++                // Sua lai PopupForm
+                 PopupForm.success("The media " + media.getTitle() + " added to Cart");
+             } catch (MediaNotAvailableException exp) {
+                 try {
+Index: src/main/resources/isd/aims/main/fxml/media_cart.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\"\r\n   prefHeight=\"129.0\" prefWidth=\"993.0\" style=\"-fx-padding: 10 5 5 5;\"\r\n   xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <HBox fx:id=\"hboxMedia\" layoutX=\"17.0\" layoutY=\"20.0\" maxHeight=\"-Infinity\"\r\n         maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"110.0\"\r\n         prefWidth=\"976.0\" AnchorPane.bottomAnchor=\"9.0\" AnchorPane.leftAnchor=\"12.0\"\r\n         AnchorPane.rightAnchor=\"5.0\" AnchorPane.topAnchor=\"10.0\">\r\n         <children>\r\n            <!-- Ảnh bìa -->\r\n            <VBox fx:id=\"imageLogoVbox\" alignment=\"CENTER\" prefHeight=\"78.0\" prefWidth=\"185.0\">\r\n               <children>\r\n                  <!-- Ảnh bìa -->\r\n                  <ImageView fx:id=\"image\" fitHeight=\"103.0\" fitWidth=\"95.0\" pickOnBounds=\"true\"\r\n                     preserveRatio=\"true\">\r\n                     <image>\r\n                        <Image url=\"/isd/aims/main/fxml/images/Logo.png\" />\r\n                     </image>\r\n                     <VBox.margin>\r\n                        <Insets />\r\n                     </VBox.margin>\r\n                  </ImageView>\r\n               </children>\r\n            </VBox>\r\n\r\n            <!-- Tiêu đề -->\r\n            <VBox fx:id=\"description\" prefHeight=\"99.0\" prefWidth=\"348.0\">\r\n               <children>\r\n                  <!-- Title -->\r\n                  <Label fx:id=\"title\" contentDisplay=\"CENTER\" maxHeight=\"-Infinity\"\r\n                     maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\"\r\n                     prefHeight=\"46.0\" prefWidth=\"353.0\" text=\"Title of Media\"\r\n                     textAlignment=\"CENTER\" textFill=\"#5091e6\" wrapText=\"true\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI\" size=\"25.0\" />\r\n                     </font>\r\n                     <VBox.margin>\r\n                        <Insets />\r\n                     </VBox.margin>\r\n                  </Label>\r\n\r\n                  <!-- Button Delete -->\r\n                  <Button fx:id=\"btnDelete\" mnemonicParsing=\"false\" prefHeight=\"45.0\"\r\n                     prefWidth=\"166.0\" text=\"Delete\">\r\n                     <font>\r\n                        <Font size=\"16.0\" />\r\n                     </font>\r\n                  </Button>\r\n               </children>\r\n               <opaqueInsets>\r\n                  <Insets />\r\n               </opaqueInsets>\r\n               <HBox.margin>\r\n                  <Insets left=\"10.0\" />\r\n               </HBox.margin>\r\n            </VBox>\r\n\r\n            <!-- Hết hàng -->\r\n            <VBox alignment=\"CENTER\" prefHeight=\"78.0\" prefWidth=\"216.0\">\r\n               <children>\r\n                  <Label fx:id=\"labelOutOfStock\" prefHeight=\"44.0\" prefWidth=\"168.0\"\r\n                     textFill=\"#e11111\" wrapText=\"true\" />\r\n               </children>\r\n            </VBox>\r\n\r\n            <!-- Price -->\r\n            <VBox maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\"\r\n               minWidth=\"-Infinity\" prefHeight=\"82.0\" prefWidth=\"188.0\">\r\n               <children>\r\n                  <Label fx:id=\"price\" alignment=\"BOTTOM_RIGHT\" contentDisplay=\"CENTER\"\r\n                     maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\"\r\n                     minWidth=\"-Infinity\" prefHeight=\"46.0\" prefWidth=\"174.0\" text=\"1,200,300\"\r\n                     textAlignment=\"CENTER\" textFill=\"#5091e6\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI Bold\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n\r\n                  <Label fx:id=\"currency\" alignment=\"TOP_RIGHT\" contentDisplay=\"CENTER\"\r\n                     maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\"\r\n                     minWidth=\"-Infinity\" prefHeight=\"39.0\" prefWidth=\"172.0\" text=\"VND\"\r\n                     textAlignment=\"CENTER\" textFill=\"#5091e6\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI\" size=\"24.0\" />\r\n                     </font>\r\n                  </Label>\r\n               </children>\r\n               <HBox.margin>\r\n                  <Insets />\r\n               </HBox.margin>\r\n            </VBox>\r\n            <VBox fx:id=\"spinnerFX\" prefHeight=\"78.0\" prefWidth=\"140.0\" />\r\n         </children>\r\n      </HBox>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/isd/aims/main/fxml/media_cart.fxml b/src/main/resources/isd/aims/main/fxml/media_cart.fxml
+--- a/src/main/resources/isd/aims/main/fxml/media_cart.fxml	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/resources/isd/aims/main/fxml/media_cart.fxml	(date 1734841062836)
+@@ -26,7 +26,7 @@
+                   <ImageView fx:id="image" fitHeight="103.0" fitWidth="95.0" pickOnBounds="true"
+                      preserveRatio="true">
+                      <image>
+-                        <Image url="/isd/aims/main/fxml/images/Logo.png" />
++                        <Image url="@images/Logo.png" />
+                      </image>
+                      <VBox.margin>
+                         <Insets />
+Index: src/main/resources/isd/aims/main/fxml/popup.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\"\r\n   prefHeight=\"215.0\" prefWidth=\"314.0\" style=\"-fx-background-color: white;\"\r\n   xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <children>\r\n      <!-- GreenTick -->\r\n      <ImageView fx:id=\"tickicon\" fitHeight=\"99.0\" fitWidth=\"103.0\" layoutX=\"107.0\" layoutY=\"23.0\"\r\n         pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"/isd/aims/main/fxml/images/tickgreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n\r\n      <!-- Notification -->\r\n      <Label fx:id=\"message\" alignment=\"CENTER\" contentDisplay=\"CENTER\" layoutX=\"16.0\"\r\n         layoutY=\"122.0\" prefHeight=\"79.0\" prefWidth=\"284.0\" text=\"The Media added to Cart\"\r\n         wrapText=\"true\">\r\n         <font>\r\n            <Font size=\"16.0\" />\r\n         </font>\r\n      </Label>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/isd/aims/main/fxml/popup.fxml b/src/main/resources/isd/aims/main/fxml/popup.fxml
+--- a/src/main/resources/isd/aims/main/fxml/popup.fxml	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/src/main/resources/isd/aims/main/fxml/popup.fxml	(date 1734848683482)
+@@ -14,7 +14,7 @@
+       <ImageView fx:id="tickicon" fitHeight="99.0" fitWidth="103.0" layoutX="107.0" layoutY="23.0"
+          pickOnBounds="true" preserveRatio="true">
+          <image>
+-            <Image url="/isd/aims/main/fxml/images/tickgreen.png" />
++            <Image url="@images/tickgreen.png" />
+          </image>
+       </ImageView>
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0f20632-74b4-4c2f-8164-ada7716c9892\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eHBP9Hj6CPPkQUGAMePZrAnBnq\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.App.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;module/GraphicUserInterface-Cuong&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/git-repos/TKXDPM.VP.20241.02/AIMS-master&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\2024_1\\TA\\AIMS\\src\\main\\resources\\isd\\aims\\main\\assets\\db\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"isd.aims.main\" />\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.App\">\r\n    <configuration name=\"App\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.App\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"DBConnection\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.entity.db.DBConnection\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.entity.db.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.HelloApplication\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JUnit5ExampleTest.justAnExample\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"main\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"JUnit5ExampleTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"justAnExample\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"AIMS\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"AIMS\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.App\" />\r\n        <item itemvalue=\"Application.DBConnection\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n        <item itemvalue=\"JUnit.JUnit5ExampleTest.justAnExample\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0f20632-74b4-4c2f-8164-ada7716c9892\" name=\"Changes\" comment=\"\" />\r\n      <created>1711551598406</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711551598406</updated>\r\n      <workItem from=\"1711551599615\" duration=\"86000\" />\r\n      <workItem from=\"1711565587574\" duration=\"884000\" />\r\n      <workItem from=\"1711566476068\" duration=\"5634000\" />\r\n      <workItem from=\"1711606179284\" duration=\"3009000\" />\r\n      <workItem from=\"1711610127046\" duration=\"7132000\" />\r\n      <workItem from=\"1711704117227\" duration=\"331000\" />\r\n      <workItem from=\"1711705542704\" duration=\"92000\" />\r\n      <workItem from=\"1711705655102\" duration=\"192000\" />\r\n      <workItem from=\"1711708662643\" duration=\"151000\" />\r\n      <workItem from=\"1711708827461\" duration=\"827000\" />\r\n      <workItem from=\"1711709659461\" duration=\"28000\" />\r\n      <workItem from=\"1711709697581\" duration=\"246000\" />\r\n      <workItem from=\"1714721010325\" duration=\"2124000\" />\r\n      <workItem from=\"1734746803518\" duration=\"5153000\" />\r\n      <workItem from=\"1734789813988\" duration=\"2004000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d55906873afe3c84b00b20490a2dc8678d82db8e)
++++ b/.idea/workspace.xml	(date 1734855967802)
+@@ -5,10 +5,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -192,6 +196,7 @@
+       <workItem from="1714721010325" duration="2124000" />
+       <workItem from="1734746803518" duration="5153000" />
+       <workItem from="1734789813988" duration="2004000" />
++      <workItem from="1734835653287" duration="15448000" />
+     </task>
+     <servers />
+   </component>

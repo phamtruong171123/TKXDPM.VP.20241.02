@@ -63,7 +63,6 @@ public class MediaForm extends FXMLForm {
                 } else {
                     CartMedia cartMedia = new CartMedia(media, cart, spinnerChangeNumber.getValue(), media.getPrice());
                     cart.getListMedia().add(cartMedia);
-                    LOGGER.info("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
                     System.out.println("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
                 }
 
@@ -71,6 +70,8 @@ public class MediaForm extends FXMLForm {
                 media.setQuantity(media.getQuantity() - spinnerChangeNumber.getValue());
                 mediaAvail.setText(String.valueOf(media.getQuantity()));
                 home.getNumMediaCartLabel().setText(String.valueOf(cart.getTotalMedia()) + " media");
+
+                // Sua lai PopupForm
                 PopupForm.success("The media " + media.getTitle() + " added to Cart");
             } catch (MediaNotAvailableException exp) {
                 try {

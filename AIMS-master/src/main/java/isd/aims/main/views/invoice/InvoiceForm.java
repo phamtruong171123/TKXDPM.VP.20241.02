@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 import isd.aims.main.InterbankSubsystem.IPayment;
-import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
 import isd.aims.main.exception.MediaNotAvailableException;
 import isd.aims.main.exception.PaymentException;
 import isd.aims.main.exception.ProcessInvoiceException;
@@ -61,23 +60,27 @@ public class InvoiceForm extends BaseForm {
 
 	private Invoice invoice;
 
-	public InvoiceForm(Stage stage, String screenPath, Invoice invoice) throws IOException {
+	public InvoiceForm(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
-		this.invoice = invoice;
-		setInvoiceInfo();
-		btnConfirm.setOnMouseClicked(e -> {
-			LOGGER.info("Pay Order button clicked");
-			try {
-				requestToPayOrder();
-
-			} catch (IOException | SQLException exp) {
-				LOGGER.severe("Cannot pay the order, see the logs");
-				exp.printStackTrace();
-				throw new PaymentException(Arrays.toString(exp.getStackTrace()).replaceAll(", ", "\n"));
-			}
-
-		});
 	}
+
+//	public InvoiceForm(Stage stage, String screenPath, Invoice invoice) throws IOException {
+//		super(stage, screenPath);
+//		this.invoice = invoice;
+//		setInvoiceInfo();
+//		btnConfirm.setOnMouseClicked(e -> {
+//			LOGGER.info("Pay Order button clicked");
+//			try {
+//				requestToPayOrder();
+//
+//			} catch (IOException | SQLException exp) {
+//				LOGGER.severe("Cannot pay the order, see the logs");
+//				exp.printStackTrace();
+//				throw new PaymentException(Arrays.toString(exp.getStackTrace()).replaceAll(", ", "\n"));
+//			}
+//
+//		});
+//	}
 
 	@SuppressWarnings("unchecked")
 	private void setInvoiceInfo(){
@@ -105,15 +108,15 @@ public class InvoiceForm extends BaseForm {
 
 	}
 
-	public void requestToPayOrder() throws SQLException, IOException {
-		try {
-			// create placeOrderController and process the order
-			IPayment vnPayService = new VnPaySubsystem();
-			PaymentController payOrderController = new PaymentController(vnPayService);
-			payOrderController.payOrder(invoice.getAmount(), "Thanh toán hóa đơn AIMS");
-			this.stage.close();
-		} catch (MediaNotAvailableException e) {
-
-		}
-	}
+//	public void requestToPayOrder() throws SQLException, IOException {
+//		try {
+//			// create placeOrderController and process the order
+//			IPayment vnPayService = new VnPaySubsystem();
+//			PaymentController payOrderController = new PaymentController(vnPayService);
+//			payOrderController.payOrder(invoice.getAmount(), "Thanh toán hóa đơn AIMS");
+//			this.stage.close();
+//		} catch (MediaNotAvailableException e) {
+//
+//		}
+//	}
 }

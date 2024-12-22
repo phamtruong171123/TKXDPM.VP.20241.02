@@ -150,6 +150,7 @@ public class CartForm extends BaseForm {
 		labelAmount.setText(Utils.getCurrencyFormat(amount));
 	}
 
+	// Hiển thị mặt hàng đã chọn và giá tiền
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();
@@ -157,6 +158,9 @@ public class CartForm extends BaseForm {
 		// get list media of cart after check availability
 		List lstMedia = getBController().getListCartMedia();
 		if (lstMedia == null || lstMedia.isEmpty()) {
+			labelAmount.setText(Utils.getCurrencyFormat(0));
+			labelVAT.setText(Utils.getCurrencyFormat(0));
+			labelSubtotal.setText(Utils.getCurrencyFormat(0));
 			System.out.println("Danh sách cartMedia rỗng!");
 			return;
 		} else {
@@ -165,7 +169,6 @@ public class CartForm extends BaseForm {
 
 		try {
 			for (Object cm : lstMedia) {
-
 				// display the attribute of vboxCart media
 				CartMedia cartMedia = (CartMedia) cm;
 				MediaForm mediaCartScreen = new MediaForm(Configs.CART_MEDIA_PATH, this);

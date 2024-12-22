@@ -42,23 +42,17 @@ public class HomeForm extends BaseForm implements Initializable {
     @FXML
     private ImageView cartImage;
 
-    // @FXML
-    // private VBox vboxMedia1;
-
-    // @FXML
-    // private VBox vboxMedia2;
-
-    // @FXML
-    // private VBox vboxMedia3;
-
     @FXML
-    private HBox hboxMedia;
+    private VBox vboxMedia;
 
     @FXML
     private TextField textFieldSearchBar;
 
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
+
+    @FXML
+    private SplitMenuButton splitMenuBtnSort;
 
     @SuppressWarnings("rawtypes")
     private List homeItems;
@@ -98,11 +92,11 @@ public class HomeForm extends BaseForm implements Initializable {
             e.printStackTrace();
         }
 
-
         aimsImage.setOnMouseClicked(e -> {
             addMediaHome(this.homeItems);
         });
 
+        // Add event listener to Open Cart
         cartImage.setOnMouseClicked(e -> {
             try {
                 LOGGER.info("User clicked to view cart");
@@ -115,11 +109,38 @@ public class HomeForm extends BaseForm implements Initializable {
             }
         });
 
-        // Add event listener to SplitMenuButton
+        // Add event listener to SplitMenuButtonSearch
         splitMenuBtnSearch.setOnAction(event -> {
             String selectedCategory = textFieldSearchBar.getText();
             filterMediaByCategory(selectedCategory);
         });
+
+        // Add event listener to SplitMenuBtnSort
+        for (MenuItem item : splitMenuBtnSort.getItems()) {
+            item.setOnAction(event -> {
+                String selectedText = item.getText();
+
+                // Sử dụng các hàm sắp xếp tương ứng
+                switch (selectedText) {
+                    case "Tên A đến Z":
+                        sortByName(true);
+                        break;
+                    case "Tên Z đến A":
+                        sortByName(false);
+                        break;
+                    case "Giá thấp đến cao":
+                        sortByPrice(true);
+                        break;
+                    case "Giá cao xuống thấp":
+                        sortByPrice(false);
+                        break;
+                }
+
+                // Cập nhật giao diện
+                addMediaHome(homeItems);
+                LOGGER.info("Sorted media by: " + selectedText);
+            });
+        }
 
         addMediaHome(this.homeItems);
         addMenuItem(0, "Book", splitMenuBtnSearch);
@@ -143,23 +164,22 @@ public class HomeForm extends BaseForm implements Initializable {
         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
         int numberOfMedia = mediaItems.size();
         System.out.println(numberOfMedia);
-        hboxMedia.getChildren().forEach(node -> {
-            VBox vBox = (VBox) node;
-            vBox.getChildren().clear();
-        });
-        while(!mediaItems.isEmpty()){
-            hboxMedia.getChildren().forEach(node -> {
-                int vid = hboxMedia.getChildren().indexOf(node);
-                VBox vBox = (VBox) node;
 
-                // Chia ra 4 cột nên chia 4
-                while(vBox.getChildren().size() < ((numberOfMedia + 3) / 4) && !mediaItems.isEmpty()){
-                    MediaForm media = (MediaForm) mediaItems.get(0);
-                    vBox.getChildren().add(media.getContent());
-                    mediaItems.remove(media);
-                }
-            });
-            return;
+        vboxMedia.getChildren().clear();
+        while (!mediaItems.isEmpty()) {
+            // Tạo hàng
+            HBox newHBox = new HBox();
+            newHBox.setPrefWidth(321.0);
+            newHBox.setPrefHeight(629.0);
+            newHBox.setStyle("-fx-border-color: #33adff;");
+
+            while (newHBox.getChildren().size() < 4 && !mediaItems.isEmpty()) {
+                MediaForm media = (MediaForm) mediaItems.get(0);
+                newHBox.getChildren().add(media.getContent());
+                mediaItems.remove(media);
+            }
+
+            vboxMedia.getChildren().add(newHBox);
         }
     }
 
@@ -173,9 +193,9 @@ public class HomeForm extends BaseForm implements Initializable {
         menuItem.setGraphic(label);
         menuItem.setOnAction(e -> {
             // empty home media
-            hboxMedia.getChildren().forEach(node -> {
-                VBox vBox = (VBox) node;
-                vBox.getChildren().clear();
+            vboxMedia.getChildren().forEach(node -> {
+                HBox hBox = (HBox) node;
+                hBox.getChildren().clear();
             });
 
             // filter only media with the choosen category
@@ -195,9 +215,9 @@ public class HomeForm extends BaseForm implements Initializable {
 
     // Helper method to filter media by category
     private void filterMediaByCategory(String category) {
-        hboxMedia.getChildren().forEach(node -> {
-            VBox vBox = (VBox) node;
-            vBox.getChildren().clear();
+        vboxMedia.getChildren().forEach(node -> {
+            HBox hBox = (HBox) node;
+            hBox.getChildren().clear();
         });
 
         List filteredItems = new ArrayList<>();
@@ -209,5 +229,25 @@ public class HomeForm extends BaseForm implements Initializable {
         }
 
         addMediaHome(filteredItems);
+    }
+
+    // Sắp xếp theo tên (tăng dần hoặc giảm dần)
+    private void sortByName(boolean ascending) {
+        homeItems.sort((o1, o2) -> {
+            MediaForm media1 = (MediaForm) o1;
+            MediaForm media2 = (MediaForm) o2;
+            int comparison = media1.getMedia().getTitle().compareToIgnoreCase(media2.getMedia().getTitle());
+            return ascending ? comparison : -comparison;
+        });
+    }
+
+    // Sắp xếp theo giá (tăng dần hoặc giảm dần)
+    private void sortByPrice(boolean ascending) {
+        homeItems.sort((o1, o2) -> {
+            MediaForm media1 = (MediaForm) o1;
+            MediaForm media2 = (MediaForm) o2;
+            int comparison = Double.compare(media1.getMedia().getPrice(), media2.getMedia().getPrice());
+            return ascending ? comparison : -comparison;
+        });
     }
 }

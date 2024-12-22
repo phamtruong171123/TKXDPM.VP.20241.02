@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
@@ -10,29 +15,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 <?import javafx.scene.control.ScrollPane?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.shape.Box?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="820.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- Header -->
-      <HBox prefHeight="104.0" prefWidth="1326.0"
-         style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
+      <HBox prefHeight="104.0" prefWidth="1326.0" style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
          <children>
             <!-- Logo -->
             <VBox prefHeight="102.0" prefWidth="231.0">
                <children>
                   <Pane prefHeight="102.0" prefWidth="237.0">
                      <children>
-                        <ImageView fx:id="aimsImage" fitHeight="94.0" fitWidth="115.0" layoutY="1.0"
-                           pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                        <ImageView fx:id="aimsImage" fitHeight="94.0" fitWidth="115.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                            <image>
-                              <Image
-                                 url="@../fxml/images/Logo.png" />
+                              <Image url="@../fxml/images/Logo.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="6.0" layoutY="68.0" prefHeight="41.0" prefWidth="100.0"
-                           text="    AIMS" textAlignment="CENTER" textFill="#5091e6">
+                        <Label layoutX="6.0" layoutY="68.0" prefHeight="41.0" prefWidth="100.0" text="    AIMS" textAlignment="CENTER" textFill="#5091e6">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -42,9 +43,10 @@
                </children>
             </VBox>
 
-            <!-- Search bar -->
+            <!-- Search -->
             <HBox prefHeight="102.0" prefWidth="882.0">
                <children>
+                  <!-- Search bar -->
                   <Pane prefHeight="102.0" prefWidth="562.0">
                      <children>
                         <TextField fx:id="textFieldSearchBar" layoutX="17.0" layoutY="27.0" prefHeight="48.0" prefWidth="528.0">
@@ -54,10 +56,11 @@
                         </TextField>
                      </children>
                   </Pane>
+
+                  <!-- Search button -->
                   <Pane prefHeight="102.0" prefWidth="158.0">
                      <children>
-                        <SplitMenuButton fx:id="splitMenuBtnSearch" layoutY="27.0"
-                           mnemonicParsing="false" prefHeight="48.0" prefWidth="124.0" text="Search">
+                        <SplitMenuButton fx:id="splitMenuBtnSearch" layoutY="27.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="124.0" text="Search">
                            <items>
                            </items>
                            <font>
@@ -74,16 +77,12 @@
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="cartImage" fitHeight="75.0" fitWidth="64.0" layoutX="14.0"
-                           layoutY="19.0" pickOnBounds="true" preserveRatio="true"
-                           style="-fx-cursor: hand;">
+                        <ImageView fx:id="cartImage" fitHeight="75.0" fitWidth="64.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                            <image>
-                              <Image
-                                 url="@../fxml/images/cart.png" />
+                              <Image url="@../fxml/images/cart.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="numMediaInCart" layoutX="24.0" layoutY="11.0"
-                           prefHeight="16.0" prefWidth="64.0" text="0 media" textFill="#5091e6" />
+                        <Label fx:id="numMediaInCart" layoutX="24.0" layoutY="11.0" prefHeight="16.0" prefWidth="64.0" text="0 media" textFill="#5091e6" />
                      </children>
                   </Pane>
                </children>
@@ -91,16 +90,39 @@
          </children>
       </HBox>
 
-      <!-- Body -->
-      <ScrollPane layoutX="24.0" layoutY="123.0" prefHeight="629.0" prefWidth="1300.0">
-         <HBox fx:id="hboxMedia" prefHeight="629.0" prefWidth="1283.0">
-            <children>
-               <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
-               <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
-               <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
-               <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />
-            </children>
-         </HBox>
+      <!-- Sort -->
+      <HBox layoutX="1233.0" layoutY="123.0">
+         <children>
+            <SplitMenuButton fx:id="splitMenuBtnSort" mnemonicParsing="false" text="Sort">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Tên A đến Z" />
+                  <MenuItem mnemonicParsing="false" text="Tên Z đến A" />
+                <MenuItem mnemonicParsing="false" text="Giá thấp đến cao" />
+                <MenuItem mnemonicParsing="false" text="Giá cao xuống thấp" />
+              </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+
+            <!-- Body -->
+      <ScrollPane layoutX="13.0" layoutY="165.0" prefHeight="629.0" prefWidth="1300.0">
+   <content>
+   <!--         <HBox fx:id="hboxMedia" prefHeight="629.0" prefWidth="1283.0">-->
+   <!--            <children>-->
+   <!--               <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />-->
+   <!--               <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
+   <!--               <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
+   <!--               <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
+   <!--            </children>-->
+   <!--         </HBox>-->
+            <VBox fx:id="vboxMedia" prefHeight="629.0" prefWidth="1283.0">
+               <children>
+                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
+                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
+                  <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
+               </children>
+            </VBox>
+   </content>
       </ScrollPane>
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@ import java.io.IOException;
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
  */
-public class VnPaySubsystem implements IPayment {
+class VnPaySubsystem{
 
     /**
      * Represent the controller of the subsystem.
@@ -34,15 +34,5 @@ public class VnPaySubsystem implements IPayment {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-    
-     @Override
-    public void processPayment(int amount, String contents, Object cardDetails) throws PaymentException, UnrecognizedException {
-        if (cardDetails instanceof CreditCard) {
-            System.out.println("Processing Credit Card Payment");
-        } else if (cardDetails instanceof DomesticCard) {
-            System.out.println("Processing Domestic Card Payment");
-        }
-        generatePaymentURL(amount, contents);
     }
 }
