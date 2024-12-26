@@ -5,7 +5,11 @@ import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.entity.invoice.Invoice;
 import isd.aims.main.entity.order.Order;
 import isd.aims.main.entity.order.OrderMedia;
+import isd.aims.main.entity.shipping.Shipment;
+import isd.aims.main.exception.InvalidDeliveryInfoException;
 import isd.aims.main.utils.Utils;
+import isd.aims.main.views.popup.PopupForm;
+import isd.aims.main.views.shipping.DeliveryForm;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -66,47 +70,100 @@ public class PlaceOrderController extends BaseController{
      * @throws IOException
      */
     @SuppressWarnings("rawtypes")
-    public void processDeliveryInfo(HashMap info) throws InterruptedException, IOException{
+    public void processDeliveryInfo(Shipment info) throws InterruptedException, IOException{
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
-        validateDeliveryInfo(info);
+        if(!validateDeliveryInfo(info)){
+            LOGGER.warning("Invalid delivery information provided: " + info);
+            throw new InvalidDeliveryInfoException("Delivery information validation failed. Please check the provided details.");
+        }
+        LOGGER.info("Delivery information is valid. Proceeding with order processing...");
     }
 
     /**
-   * The method validates the info
-   * @param info
+   * The method validates the info, including name, phone, and address
+   * @param deliveryInfo
    * @throws InterruptedException
    * @throws IOException
    */
-    public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException{
-
-    }
-
-    public boolean validatePhoneNumber(String phoneNumber) {
-    	// TODO: your work
-    	return false;
-    }
-
-    public boolean validateName(String name) {
-    	// TODO: your work
-    	return false;
-    }
-
-    public boolean validateAddress(String address) {
-    	// TODO: your work
-    	return false;
+    public boolean validateDeliveryInfo(Shipment deliveryInfo) throws InterruptedException, IOException{
+        if (deliveryInfo == null) return false;
+        String name = deliveryInfo.getName();
+        String phone = deliveryInfo.getPhone();
+        String address = deliveryInfo.getAddress();
+        return validateName(name) && validatePhoneNumber(phone) && validateAddress(address);
     }
 
 
     /**
-     * This method calculates the shipping fees of order
-     * @param order
-     * @return shippingFee
+     * The method validates the phone number
+     * @param phoneNumber
+     * @return
      */
-    public int calculateShippingFee(Order order){
-        Random rand = new Random();
-        int fees = (int)( ( (rand.nextFloat()*10)/100 ) * order.getAmount() );
-        LOGGER.info("Order Amount: " + order.getAmount() + " -- Shipping Fees: " + fees);
-        return fees;
+    public boolean validatePhoneNumber(String phoneNumber) {
+        // Check if the phone number starts with '0'
+        if (!phoneNumber.startsWith("0")) {
+            return false;
+        }
+
+        // Remove spaces for convenience, as they are not part of the allowed format
+
+        // Check if the phone number contains more than one type of separator
+        if (phoneNumber.contains(".") && phoneNumber.contains("-")) {
+            return false;
+        }
+        if (phoneNumber.contains("-") && phoneNumber.contains("/")) {
+            return false;
+        }
+        if (phoneNumber.contains(".") && phoneNumber.contains("/")) {
+            return false;
+        }
+        String cleanedPhoneNumber = phoneNumber.replaceAll("[\\s/.-]", "");
+        // Check if the cleaned phone number has exactly 10 digits
+        if (cleanedPhoneNumber.length() != 10) {
+            return false;
+        }
+        // Ensure the phone number consists of only digits
+        try {
+            Long.parseLong(cleanedPhoneNumber); // try parsing as long to ensure no non-numeric characters
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        // If all conditions passed, the phone number is valid
+        return true;
+    }
+
+    /**
+     * The method validates the customer's name
+     * @param name
+     * @return
+     */
+    public boolean validateName(String name) {
+        if (name == null || name.isEmpty()) {
+            return false;  // Return false if name is null
+        }
+        if (name.length() > 30) {
+            return false;  // Return false if name length exceeds 30 characters
+        }
+        System.out.println(name.matches("^[a-zA-Z\\s]+$"));
+        return name.matches("^[a-zA-Z\\s]+$");  // Check if the name contains only letters (a-z, A-Z)
+    }
+
+    public boolean validateAddress(String address) {
+        if (address == null || address.isEmpty()) {
+            return false;  // Address must not be null or empty
+        }
+        if (address.length() > 100) {
+            return false;  // Address length must not exceed 100 characters
+        }
+        System.out.println(address.matches("[a-zA-Z0-9\\s]+"));
+        return address.matches("[a-zA-Z0-9\\s]+");  // Only letters, digits, or slashes are allowed
+    }
+
+    public String validateRushShipping(Invoice invoice){
+        if(invoice.getOrder().getDeliveryInfo().getProvince() == null ) return "EMPTY";
+        if(!invoice.getOrder().getDeliveryInfo().validateRushDeliveryInfo()) return "ADDRESS_NOT_SUPPORT";
+        if(invoice.getNumberOfRushDeliveryProduct() == 0) return "PRODUCT_NOT_SUPPORT";
+        return "VALID";
     }
 }

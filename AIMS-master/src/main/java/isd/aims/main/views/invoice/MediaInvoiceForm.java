@@ -3,12 +3,14 @@ package isd.aims.main.views.invoice;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.PropertyPermission;
 
 import isd.aims.main.entity.order.OrderMedia;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.FXMLForm;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,6 +38,12 @@ public class MediaInvoiceForm extends FXMLForm {
     private Label numOfProd;
 
     @FXML
+    private Label weight;
+
+    @FXML
+    private Button isRushDelivery;
+
+    @FXML
     private Label labelOutOfStock;
 
     @FXML
@@ -56,6 +64,13 @@ public class MediaInvoiceForm extends FXMLForm {
         title.setText(orderMedia.getMedia().getTitle());
         price.setText(Utils.getCurrencyFormat(orderMedia.getPrice()));
         numOfProd.setText(String.valueOf(orderMedia.getQuantity()));
+        if(orderMedia.getMedia().isSupportRushDelivery()){
+            isRushDelivery.setText("Hỗ trợ GHN");
+        } else {
+            isRushDelivery.setText("Không hỗ trợ GHN");
+        }
+//        isRushDelivery.setText(String.valueOf(orderMedia.getMedia().isSupportRushDelivery()));
+        weight.setText(String.valueOf(orderMedia.getMedia().getWeight()) + "kg");
         // setImage(image, orderMedia.getMedia().getImageURL());
 
         File file = new File(Configs.IMAGE_PATH + orderMedia.getMedia().getImageURL());
