@@ -4,8 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
+    <list default="true" id="bb170631-fae3-4c77-b459-2befc60a0491" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByCD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByDVD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/IFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/ISort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortByNameAscending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortByNameDescending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortByPriceAscending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortByPriceDescending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/sort/SortOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/images/sort.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/isd/aims/main/controller/PlaceOrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Cohesion,Coupling &amp; Solid Module ShippingFeeCalculator.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Mở rộng chức năng tính toán phí vận chuyển.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims_sqlite.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/assets/db/aims_sqlite.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +60,40 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="module/GraphicUserInterface-Cuong" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDONcdoCM6GAkKP&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1734857946491
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/phamtruong171123/TKXDPM.VP.20241.02.git&quot;,
+    &quot;accountId&quot;: &quot;e3e2c916-1622-48da-962a-1981b3dd9b38&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -48,25 +119,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;usecase/place-order&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC Giang/Documents/TKXDPM/TKXDPM.VP.20241.02/AIMS-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging usecase/place-order",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2024_1\TA\AIMS\src\main\resources\isd\aims\main\assets\db" />
@@ -159,6 +219,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -180,6 +247,10 @@
       <workItem from="1711709659461" duration="28000" />
       <workItem from="1711709697581" duration="246000" />
       <workItem from="1714721010325" duration="2124000" />
+      <workItem from="1734857689083" duration="536000" />
+      <workItem from="1735717627220" duration="631000" />
+      <workItem from="1735719879202" duration="24102000" />
+      <workItem from="1735784296825" duration="8250000" />
     </task>
     <servers />
   </component>
@@ -569,6 +640,15 @@
           <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RushDeliveryFeeStrategy.java</url>
           <line>12</line>
           <option name="timeStamp" value="350" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+          <line>65</line>
+          <properties class="isd.aims.main.views.shipping.DeliveryForm" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -183,17 +183,13 @@ public class DeliveryForm extends BaseForm implements Initializable {
         order.setDeliveryInfo(info);
         // create invoice screen
         Invoice invoice = getBController().createInvoice(order);
-        DeliveryFeeStrategy deliveryStrategy;
         DeliveryFeeContext deliveryContext = new DeliveryFeeContext();
 
         if (invoice.getOrder().getDeliveryInfo().isRushDelivery()) {
-            deliveryStrategy = new JoinedDeliveryFeeStrategy(new RegularDeliveryFeeStrategy(), new RushDeliveryFeeStrategy());
+            deliveryContext.setDeliveryStrategy(new JoinedDeliveryFeeStrategy(new RegularDeliveryFeeStrategy(), new RushDeliveryFeeStrategy()));
         } else {
-            deliveryStrategy = new RegularDeliveryFeeStrategy();
+            deliveryContext.setDeliveryStrategy(new RegularDeliveryFeeStrategy());
         }
-
-        // Tạo context với chiến lược tương ứng
-        deliveryContext.setDeliveryStrategy(deliveryStrategy);
 
         // Tính phí vận chuyển mới
         int shippingFees = deliveryContext.calculateShippingFee(invoice.getOrder());

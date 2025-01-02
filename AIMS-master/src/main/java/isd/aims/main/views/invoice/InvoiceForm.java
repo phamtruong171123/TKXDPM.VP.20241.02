@@ -202,13 +202,10 @@ public class InvoiceForm extends BaseForm {
         DeliveryFeeContext deliveryContext = new DeliveryFeeContext();
 
         if (invoice.getOrder().getDeliveryInfo().isRushDelivery()) {
-            deliveryStrategy = new JoinedDeliveryFeeStrategy(new RegularDeliveryFeeStrategy(), new RushDeliveryFeeStrategy());
+			deliveryContext.setDeliveryStrategy(new JoinedDeliveryFeeStrategy(new RegularDeliveryFeeStrategy(), new RushDeliveryFeeStrategy()));
         } else {
-            deliveryStrategy = new RegularDeliveryFeeStrategy();
+			deliveryContext.setDeliveryStrategy(new RegularDeliveryFeeStrategy());
         }
-
-        // Tạo context với chiến lược tương ứng
-        deliveryContext.setDeliveryStrategy(deliveryStrategy);
 
         // Tính phí vận chuyển mới
         int newShippingFee = deliveryContext.calculateShippingFee(invoice.getOrder());
@@ -271,4 +268,5 @@ public class InvoiceForm extends BaseForm {
 
         }
     }
+
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
  */
-public class VnPaySubsystem implements IPayment {
+public class VnPaySubsystem implements IPayment{
 
     /**
      * Represent the controller of the subsystem.

@@ -1,20 +1,19 @@
 package isd.aims.main.views.home;
 
+import isd.aims.main.business.media.sort.SortOption;
 import isd.aims.main.exception.ViewCartException;
 import isd.aims.main.controller.HomeController;
 import isd.aims.main.controller.ViewCartController;
 import isd.aims.main.entity.cart.Cart;
 import isd.aims.main.entity.media.Media;
+import isd.aims.main.business.media.search.FilterOption;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.BaseForm;
 import isd.aims.main.views.cart.CartForm;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -45,20 +44,17 @@ public class HomeForm extends BaseForm implements Initializable {
     @FXML
     private ImageView cartImage;
 
-    // @FXML
-    // private VBox vboxMedia1;
-
-    // @FXML
-    // private VBox vboxMedia2;
-
-    // @FXML
-    // private VBox vboxMedia3;
+    @FXML
+    private VBox vboxMedia;
 
     @FXML
-    private HBox hboxMedia;
+    private TextField textFieldSearchBar;
 
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
+
+    @FXML
+    private SplitMenuButton splitMenuBtnSort;
 
     @SuppressWarnings("rawtypes")
     private List homeItems;
@@ -85,24 +81,80 @@ public class HomeForm extends BaseForm implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         setBController(new HomeController());
-        try{
+        try {
+            getBController().setAllMedia();
             List medium = getBController().getAllMedia();
-            this.homeItems = new ArrayList();
-            for (Object object : medium) {
-                Media media = (Media) object;
-                MediaForm m1 = new MediaForm(Configs.HOME_MEDIA_PATH, media, this);
-                this.homeItems.add(m1);
-            }
-        }catch (SQLException | IOException e){
-            LOGGER.info("Errors occured: " + e.getMessage());
-            e.printStackTrace();
+            showMediaItems(medium);
+
+            getBController().setScreenMediaList(medium);
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException(e);
         }
 
-
         aimsImage.setOnMouseClicked(e -> {
-            addMediaHome(this.homeItems);
+            textFieldSearchBar.setText("");
+            getBController().setScreenMediaList(getBController().getAllMedia());
+            try {
+                showMediaItems(getBController().getScreenMediaList());
+            } catch (SQLException | IOException ex) {
+                throw new RuntimeException(ex);
+            }
         });
 
+        addSortMenuItems();
+        setupSearchBar();
+        setupCartIcon();
+    }
+
+    private void addSortMenuItems() {
+        for (SortOption option : SortOption.values()) {
+            MenuItem menuItem = new MenuItem(option.getDisplayName());
+            menuItem.setOnAction(event -> {
+                List<Media> sortedMediaList = getBController().applySortStrategy(option);
+                try {
+                    showMediaItems(sortedMediaList);
+
+                    getBController().setScreenMediaList(sortedMediaList);
+                } catch (SQLException | IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            splitMenuBtnSort.getItems().add(menuItem);
+        }
+    }
+
+    private void setupSearchBar() {
+        splitMenuBtnSearch.setOnAction(event -> {
+            try {
+                String query = textFieldSearchBar.getText();
+                List<Media> filteredItems = getBController().getFilteredMedia(query);
+                showMediaItems(filteredItems);
+                getBController().setScreenMediaList(filteredItems);
+            } catch (SQLException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        for (FilterOption option : FilterOption.values()) {
+            MenuItem menuItem = new MenuItem(option.getDisplayName());
+            Label label = new Label();
+            label.prefWidthProperty().bind(splitMenuBtnSearch.widthProperty().subtract(50));
+            label.setTextAlignment(TextAlignment.RIGHT);
+            menuItem.setGraphic(label);
+            menuItem.setOnAction(event -> {
+                try {
+                    List<Media> filteredMediaList = getBController().filterByType(option);
+                    showMediaItems(filteredMediaList);
+                } catch (SQLException | IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            });
+            splitMenuBtnSearch.getItems().add(menuItem);
+        }
+    }
+
+    private void setupCartIcon() {
+        // Add event listener to Open Cart
         cartImage.setOnMouseClicked(e -> {
             try {
                 LOGGER.info("User clicked to view cart");
@@ -114,11 +166,6 @@ public class HomeForm extends BaseForm implements Initializable {
                 throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
             }
         });
-
-        addMediaHome(this.homeItems);
-        addMenuItem(0, "Book", splitMenuBtnSearch);
-        addMenuItem(1, "DVD", splitMenuBtnSearch);
-        addMenuItem(2, "CD", splitMenuBtnSearch);
     }
 
     public void setImage() {
@@ -132,54 +179,37 @@ public class HomeForm extends BaseForm implements Initializable {
         cartImage.setImage(img2);
     }
 
+    private void showMediaItems(List<Media> mediaList) throws SQLException, IOException {
+        this.homeItems = new ArrayList();
+        for (Media media : mediaList) {
+            MediaForm m1 = new MediaForm(Configs.HOME_MEDIA_PATH, media, this);
+            this.homeItems.add(m1);
+        }
+        addMediaHome(this.homeItems);
+    }
+
     @SuppressWarnings("rawtypes")
     public void addMediaHome(List items){
         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
-        hboxMedia.getChildren().forEach(node -> {
-            VBox vBox = (VBox) node;
-            vBox.getChildren().clear();
-        });
-        while(!mediaItems.isEmpty()){
-            hboxMedia.getChildren().forEach(node -> {
-                int vid = hboxMedia.getChildren().indexOf(node);
-                VBox vBox = (VBox) node;
-                while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
-                    MediaForm media = (MediaForm) mediaItems.get(0);
-                    vBox.getChildren().add(media.getContent());
-                    mediaItems.remove(media);
-                }
-            });
-            return;
+        int numberOfMedia = mediaItems.size();
+
+        System.out.println(numberOfMedia);
+
+        vboxMedia.getChildren().clear();
+        while (!mediaItems.isEmpty()) {
+            // Tạo hàng
+            HBox newHBox = new HBox();
+            newHBox.setPrefWidth(321.0);
+            newHBox.setPrefHeight(629.0);
+            newHBox.setStyle("-fx-border-color: #33adff;");
+
+            while (newHBox.getChildren().size() < 4 && !mediaItems.isEmpty()) {
+                MediaForm media = (MediaForm) mediaItems.get(0);
+                newHBox.getChildren().add(media.getContent());
+                mediaItems.remove(media);
+            }
+
+            vboxMedia.getChildren().add(newHBox);
         }
-    }
-
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    private void addMenuItem(int position, String text, MenuButton menuButton){
-        MenuItem menuItem = new MenuItem();
-        Label label = new Label();
-        label.prefWidthProperty().bind(menuButton.widthProperty().subtract(31));
-        label.setText(text);
-        label.setTextAlignment(TextAlignment.RIGHT);
-        menuItem.setGraphic(label);
-        menuItem.setOnAction(e -> {
-            // empty home media
-            hboxMedia.getChildren().forEach(node -> {
-                VBox vBox = (VBox) node;
-                vBox.getChildren().clear();
-            });
-
-            // filter only media with the choosen category
-            List filteredItems = new ArrayList<>();
-            homeItems.forEach(me -> {
-                MediaForm media = (MediaForm) me;
-                if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){
-                    filteredItems.add(media);
-                }
-            });
-
-            // fill out the home with filted media as category
-            addMediaHome(filteredItems);
-        });
-        menuButton.getItems().add(position, menuItem);
     }
 }

@@ -115,6 +115,7 @@ public class PlaceOrderController extends BaseController{
      * @param phoneNumber
      * @return
      */
+//<<<<<<< HEAD
     public boolean validatePhoneNumber(String phoneNumber) {
         // Check if the phone number starts with '0'
         if (!phoneNumber.startsWith("0")) {

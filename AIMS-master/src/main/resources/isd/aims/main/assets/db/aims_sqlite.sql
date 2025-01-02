@@ -42,6 +42,7 @@ CREATE TABLE "aims"."Book"(
     FOREIGN KEY("id")
     REFERENCES "Media"("id")
 );
+
 CREATE TABLE "aims"."User"(
   "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   "name" VARCHAR(45) NOT NULL,

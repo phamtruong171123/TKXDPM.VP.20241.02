@@ -26,6 +26,7 @@ public class MediaRepositoryImpl implements IMediaRepository {
         while (res.next()) {
             medium.add(mapToMedia(res));
         }
+        System.out.println(medium);
         return medium;
     }
     public void updateMediaFieldById(int id, String field, Object value) throws SQLException {

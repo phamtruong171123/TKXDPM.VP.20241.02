@@ -2,7 +2,6 @@ package isd.aims.main.InterbankSubsystem;
 
 import isd.aims.main.exception.PaymentException;
 import isd.aims.main.exception.UnrecognizedException;
-import isd.aims.main.entity.payment.PaymentTransaction;
 import isd.aims.main.entity.response.Response;
 
 import java.text.ParseException;
@@ -20,5 +19,5 @@ public interface IPayment {
      */
     public abstract String generatePaymentURL(int amount, String contents)
             throws PaymentException, UnrecognizedException;
-
+//  void processPayment(int amount, String contents, Object cardDetails) throws PaymentException, UnrecognizedException;
 }

@@ -72,6 +72,7 @@ public class MediaForm extends FXMLForm {
 
 	private void setMediaInfo() {
 		title.setText(cartMedia.getMedia().getTitle());
+		System.out.println(title.getText());
 		price.setText(Utils.getCurrencyFormat(cartMedia.getPrice()));
 		File file = new File(Configs.IMAGE_PATH + cartMedia.getMedia().getImageURL());
 		Image im = new Image(file.toURI().toString());
