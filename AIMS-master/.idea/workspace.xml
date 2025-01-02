@@ -5,24 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/payment/VNPay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/cart.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/media_cart.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/popup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,23 +41,23 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDONcdoCM6GAkKP",
-        "number": 1
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDONcdoCM6GAkKP&quot;,
+        &quot;number&quot;: 1
       },
-      "lastSeen": 1734857946491
+      &quot;lastSeen&quot;: 1734857946491
     }
   ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/phamtruong171123/TKXDPM.VP.20241.02.git",
-    "accountId": "e3e2c916-1622-48da-962a-1981b3dd9b38"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/phamtruong171123/TKXDPM.VP.20241.02.git&quot;,
+    &quot;accountId&quot;: &quot;e3e2c916-1622-48da-962a-1981b3dd9b38&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -230,6 +223,9 @@
       <workItem from="1711709697581" duration="246000" />
       <workItem from="1714721010325" duration="2124000" />
       <workItem from="1734857689083" duration="536000" />
+      <workItem from="1735717627220" duration="631000" />
+      <workItem from="1735719879202" duration="24102000" />
+      <workItem from="1735784296825" duration="8250000" />
     </task>
     <servers />
   </component>
@@ -250,70 +246,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
           <line>65</line>
-          <properties class="isd.aims.main.views.shipping.DeliveryForm" method="submitDeliveryInfo">
+          <properties class="isd.aims.main.views.shipping.DeliveryForm" method="getBController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

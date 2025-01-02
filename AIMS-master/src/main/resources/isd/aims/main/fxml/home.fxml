@@ -95,10 +95,7 @@
          <children>
             <SplitMenuButton fx:id="splitMenuBtnSort" mnemonicParsing="false" text="Sort">
               <items>
-                  <MenuItem mnemonicParsing="false" text="Tên A đến Z" />
-                  <MenuItem mnemonicParsing="false" text="Tên Z đến A" />
-                <MenuItem mnemonicParsing="false" text="Giá thấp đến cao" />
-                <MenuItem mnemonicParsing="false" text="Giá cao xuống thấp" />
+
               </items>
             </SplitMenuButton>
          </children>
@@ -106,15 +103,7 @@
 
             <!-- Body -->
       <ScrollPane layoutX="13.0" layoutY="165.0" prefHeight="629.0" prefWidth="1300.0">
-   <content>
-   <!--         <HBox fx:id="hboxMedia" prefHeight="629.0" prefWidth="1283.0">-->
-   <!--            <children>-->
-   <!--               <VBox fx:id="vboxMedia1" prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />-->
-   <!--               <VBox fx:id="vboxMedia2" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
-   <!--               <VBox fx:id="vboxMedia3" prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
-   <!--               <VBox prefHeight="629.0" prefWidth="320.0" style="-fx-border-color: #33adff;" />-->
-   <!--            </children>-->
-   <!--         </HBox>-->
+         <content>
             <VBox fx:id="vboxMedia" prefHeight="629.0" prefWidth="1283.0">
                <children>
                   <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
@@ -122,7 +111,7 @@
                   <HBox prefHeight="629.0" prefWidth="321.0" style="-fx-border-color: #33adff;" />
                </children>
             </VBox>
-   </content>
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>

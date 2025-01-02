@@ -48,57 +48,6 @@ public class Media {
         }
         return this.quantity;
     }
-//    public int getQuantity() throws SQLException{
-//        int updated_quantity = getMediaById(id).quantity;
-//        this.quantity = updated_quantity;
-//        return updated_quantity;
-//    }
-
-//    public Media getMediaById(int id) throws SQLException{
-//        String sql = "SELECT * FROM Media ;";
-//        Statement stm = DBConnection.getConnection().createStatement();
-//        ResultSet res = stm.executeQuery(sql);
-//		if(res.next()) {
-//
-//            return new Media()
-//                .setId(res.getInt("id"))
-//                .setTitle(res.getString("title"))
-//                .setQuantity(res.getInt("quantity"))
-//                .setCategory(res.getString("category"))
-//                .setMediaURL(res.getString("imageUrl"))
-//                .setPrice(res.getInt("price"))
-//                .setType(res.getString("type"));
-//        }
-//        return null;
-//    }
-//
-//    public List getAllMedia() throws SQLException{
-//        Statement stm = DBConnection.getConnection().createStatement();
-//        ResultSet res = stm.executeQuery("select * from Media");
-//        ArrayList medium = new ArrayList<>();
-//        while (res.next()) {
-//            Media media = new Media()
-//                .setId(res.getInt("id"))
-//                .setTitle(res.getString("title"))
-//                .setQuantity(res.getInt("quantity"))
-//                .setCategory(res.getString("category"))
-//                .setMediaURL(res.getString("imageUrl"))
-//                .setPrice(res.getInt("price"))
-//                .setType(res.getString("type"));
-//            medium.add(media);
-//        }
-//        return medium;
-//    }
-//
-//    public void updateMediaFieldById(String tbname, int id, String field, Object value) throws SQLException {
-//        Statement stm = DBConnection.getConnection().createStatement();
-//        if (value instanceof String){
-//            value = "\"" + value + "\"";
-//        }
-//        stm.executeUpdate(" update " + tbname + " set" + " "
-//                          + field + "=" + value + " "
-//                          + "where id=" + id + ";");
-//    }
 
     // getter and setter 
     public int getId() {
