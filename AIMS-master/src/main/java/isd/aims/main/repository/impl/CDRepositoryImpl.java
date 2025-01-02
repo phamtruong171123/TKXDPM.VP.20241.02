@@ -2,6 +2,7 @@ package isd.aims.main.repository.impl;
 
 import isd.aims.main.entity.db.DBConnection;
 import isd.aims.main.entity.media.CD;
+import isd.aims.main.entity.media.Media;
 import isd.aims.main.repository.IMediaRepository;
 
 import java.sql.*;
@@ -17,9 +18,8 @@ public class CDRepositoryImpl implements IMediaRepository<CD> {
     }
     @Override
     public CD getById(int id) throws SQLException {
-        String sql = "SELECT * FROM "+
-                "aims.CD " +
-                "INNER JOIN aims.Media " +
+        String sql = "SELECT * FROM " +
+                "aims.CD " + "INNER JOIN aims.Media " +
                 "ON Media.id = CD.id " +
                 "where Media.id = " + id + ";";
         ResultSet res = stm.executeQuery(sql);
@@ -41,74 +41,7 @@ public class CDRepositoryImpl implements IMediaRepository<CD> {
         }
         return cds;
     }
-//    public void insertCD(CD cd) throws SQLException {
-//        String mediaSql = "INSERT INTO aims.Media (id, title, category, price, quantity, type, imageURL) VALUES (?, ?, ?, ?, ?, ?, ?);";
-//        String cdSql = "INSERT INTO aims.CD (id, artist, recordLabel, musicType, releasedDate) VALUES (?, ?, ?, ?, ?);";
-//
-//        try (PreparedStatement mediaStm = connection.prepareStatement(mediaSql);
-//             PreparedStatement cdStm = connection.prepareStatement(cdSql)) {
-//
-//            // Insert into Media table
-//            mediaStm.setInt(1, cd.getId());
-//            mediaStm.setString(2, cd.getTitle());
-//            mediaStm.setString(3, cd.getCategory());
-//            mediaStm.setInt(4, cd.getPrice());
-//            mediaStm.setInt(5, cd.getQuantity());
-//            mediaStm.setString(6, cd.getType());
-//            mediaStm.setString(7, cd.getImageURL());
-//            mediaStm.executeUpdate();
-//
-//            // Insert into Book table
-//            cdStm.setInt(1, cd.getId());
-//            cdStm.setString(2, cd.getArtist());
-//            cdStm.setString(3, cd.getRecordLabel());
-//            cdStm.setString(4, cd.getMusicType());
-//            cdStm.setDate(5, new java.sql.Date(cd.getReleasedDate().getTime()));
-//            cdStm.executeUpdate();
-//        }
-//    }
-//    public void updateCD(CD cd) throws SQLException {
-//        String mediaSql = "UPDATE aims.Media SET title = ?, category = ?, price = ?, quantity = ?, type = ?, imageURL = ? WHERE id = ?;";
-//        String cdSql = "UPDATE aims.CD SET artist = ?, recordLabel = ?, musicType = ?, releasedDate = ? WHERE id = ?;";
-//
-//        try (PreparedStatement mediaStm = connection.prepareStatement(mediaSql);
-//             PreparedStatement cdStm = connection.prepareStatement(cdSql)) {
-//
-//            // Update Media table
-//            mediaStm.setString(1, cd.getTitle());
-//            mediaStm.setString(2, cd.getCategory());
-//            mediaStm.setInt(3, cd.getPrice());
-//            mediaStm.setInt(4, cd.getQuantity());
-//            mediaStm.setString(5, cd.getType());
-//            mediaStm.setString(6, cd.getImageURL());
-//            mediaStm.setInt(7, cd.getId());
-//            mediaStm.executeUpdate();
-//
-//            // Update Book table
-//            cdStm.setString(1, cd.getArtist());
-//            cdStm.setString(2, cd.getRecordLabel());
-//            cdStm.setString(3, cd.getMusicType());
-//            cdStm.setDate(4, new java.sql.Date(cd.getReleasedDate().getTime()));
-//            cdStm.setInt(5, cd.getId());
-//            cdStm.executeUpdate();
-//        }
-//    }
-//    public void deleteCD(int id) throws SQLException {
-//        String cdSql = "DELETE FROM aims.CD WHERE id = ?;";
-//        String mediaSql = "DELETE FROM aims.Media WHERE id = ?;";
-//
-//        try (PreparedStatement cdStm = connection.prepareStatement(cdSql);
-//             PreparedStatement mediaStm = connection.prepareStatement(mediaSql)) {
-//
-//            // Delete from Book table
-//            cdStm.setInt(1, id);
-//            cdStm.executeUpdate();
-//
-//            // Delete from Media table
-//            mediaStm.setInt(1, id);
-//            mediaStm.executeUpdate();
-//        }
-//    }
+
     private CD mapToCD(ResultSet res) throws SQLException {
         int id = res.getInt("id");
         String title = res.getString("title");
@@ -123,5 +56,21 @@ public class CDRepositoryImpl implements IMediaRepository<CD> {
         String musicType = res.getString("musicType");
         Date releasedDate = res.getDate("releasedDate");
         return new CD(id, title, category, price, quantity, type, imageURL, artist, recordLabel, musicType, releasedDate);
+    }
+
+    /**
+     * Lọc dữ liệu bởi thuộc tính type của sản phẩm, mỗi lần lấy ra một số lượng nhất định sản phẩm
+     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
+     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
+     * @RETURN Danh sách sản phẩm
+     **/
+    public List<Media> getByTypeWithPagination(int limit, int offset) throws SQLException {
+        String sql = "SELECT * FROM Media WHERE type = 'cd'" + " LIMIT " + limit + " OFFSET " + offset;
+        List<Media> medium = new ArrayList<>();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            medium.add(MediaRepositoryImpl.mapToMedia(res));
+        }
+        return medium;
     }
 }

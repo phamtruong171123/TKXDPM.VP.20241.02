@@ -16,7 +16,6 @@ public class MediaRepositoryImpl implements IMediaRepository {
         stm = DBConnection.getConnection().createStatement();
     }
 
-
     @Override
     public List<Media> getAll() throws SQLException {
         String sql = "SELECT * FROM Media";
@@ -47,7 +46,7 @@ public class MediaRepositoryImpl implements IMediaRepository {
         return null;
     }
 
-    private Media mapToMedia(ResultSet res) throws SQLException {
+    static Media mapToMedia(ResultSet res) throws SQLException {
         int id = res.getInt("id");
         String title = res.getString("title");
         String category = res.getString("category");
@@ -58,5 +57,70 @@ public class MediaRepositoryImpl implements IMediaRepository {
         return new Media(id, title, category, price, quantity, type, imageURL);
     }
 
+    /**
+     * Lấy ngẫu nhiên sản phảm, mỗi lần lấy ra một số lượng nhất định sản phẩm
+     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
+     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
+     * @RETURN Danh sách sản phẩm
+     **/
+    public List<Media> getMediasWithPagination(int limit, int offset) throws SQLException {
+        String sql = "SELECT * FROM Media LIMIT " + limit + " OFFSET " + offset;
+        List<Media> medium = new ArrayList<>();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            medium.add(MediaRepositoryImpl.mapToMedia(res));
+        }
+        return medium;
+    }
 
+    /**
+     * Lọc dữ liệu bởi thuộc tính type của sản phẩm, mỗi lần lấy ra một số lượng nhất định sản phẩm
+     * @Parameter type String: Kiểu sản phẩm muôn lấy (Book, Cd, Dvd,...)
+     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
+     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
+     * @RETURN Danh sách sản phẩm
+     **/
+    public List<Media> getMediasByTypeWithPagination(String type, int limit, int offset) throws SQLException {
+        String sql = "SELECT * FROM Media WHERE type = \'" + type + "\'" + " LIMIT " + limit + " OFFSET " + offset;
+        List<Media> medium = new ArrayList<>();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            medium.add(MediaRepositoryImpl.mapToMedia(res));
+        }
+        return medium;
+    }
+
+    /**
+     * Lọc dữ liệu với những sản phẩm trong tên có chứa query, mỗi lần lấy ra một số lượng nhất định sản phẩm
+     * @Parameter query String: chuỗi dùng để truy vấn
+     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
+     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
+     * @RETURN Danh sách sản phẩm
+     **/
+    public List<Media> getMediasFilteredByQueryWithPagination(String query, int limit, int offset) throws SQLException {
+        String sql = "SELECT * FROM Media WHERE title LIKE \'%" + query + "%\'" + " LIMIT " + limit + " OFFSET " + offset;
+        List<Media> medium = new ArrayList<>();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            medium.add(MediaRepositoryImpl.mapToMedia(res));
+        }
+        return medium;
+    }
+
+    /**
+     * Lọc dữ liệu với những sản phẩm trong thuộc category chỉ định, mỗi lần lấy ra một số lượng nhất định sản phẩm
+     * @Parameter category String: category
+     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
+     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
+     * @RETURN Danh sách sản phẩm
+     **/
+    public List<Media> getMediasFilteredByCategoryWithPagination(String category, int limit, int offset) throws SQLException {
+        String sql = "SELECT * FROM Media WHERE category = \'" + category + "\'" + " LIMIT " + limit + " OFFSET " + offset;
+        List<Media> medium = new ArrayList<>();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            medium.add(MediaRepositoryImpl.mapToMedia(res));
+        }
+        return medium;
+    }
 }
