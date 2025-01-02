@@ -23,13 +23,42 @@ public class HomeController extends BaseController{
     private List<Media> mediaList;
     private List<Media> screenMediaList;
 
+    private final MediaRepositoryImpl mediaRepository = new MediaRepositoryImpl();
+
+    private final int PAGESIZE = 20;
+    private int currentPage = 1;
+
+    public void resetCurrentPage() {
+        currentPage = 1;
+    }
+
+    public int incrementPage() {
+        currentPage++;
+        return currentPage;
+    }
+
+    public int decrementPage() {
+        if (currentPage > 1) {
+            currentPage--;
+        }
+        return currentPage;
+    }
+
+    public HomeController() throws SQLException {
+    }
+
     public void setAllMedia() throws SQLException {
-        this.mediaList = new MediaRepositoryImpl().getAll();
+        this.mediaList = mediaRepository.getAll();
     }
 
     @SuppressWarnings("rawtypes")
     public List getAllMedia() {
         return mediaList;
+    }
+
+    public List<Media> getMediaPage(int pageNumber) throws SQLException {
+        int offset = (pageNumber - 1) * PAGESIZE; // Tính toán OFFSET
+        return mediaRepository.getMediasWithPagination(PAGESIZE, offset);
     }
 
     public void setScreenMediaList(List<Media> screenMediaList) {
@@ -40,20 +69,13 @@ public class HomeController extends BaseController{
         return screenMediaList;
     }
 
-    public List<Media> getFilteredMedia(String query) {
+    public List<Media> getFilteredMedia(String query) throws SQLException {
         if (query == null || query.isEmpty()) {
-            return mediaList;
+            return getMediaPage(1);
         }
         List<Media> filteredMediaList = new ArrayList<>();
-        for (Media media : mediaList) {
-            if (media.getTitle().toLowerCase().contains(query.toLowerCase())) {
-                filteredMediaList.add(media);
-            }
-
-            if (media.getCategory().equals(query.toLowerCase())) {
-                filteredMediaList.add(media);
-            }
-        }
+        filteredMediaList.addAll(mediaRepository.getMediasFilteredByCategoryWithPagination(query.toLowerCase(), 100, 0));
+        filteredMediaList.addAll(mediaRepository.getMediasFilteredByQueryWithPagination(query.toLowerCase(), 100, 0));
         return filteredMediaList;
     }
 
@@ -65,5 +87,10 @@ public class HomeController extends BaseController{
     public List<Media> filterByType(FilterOption option) {
         IFilter filterMachine = FilterFactory.getFilter(option);
         return filterMachine.filter(screenMediaList);
+    }
+
+    public List<Media> chooseAllMediaWithType(FilterOption option) throws SQLException {
+        String type = option.getDisplayName().toLowerCase();
+        return mediaRepository.getMediasByTypeWithPagination(type, 100, 0);
     }
 }

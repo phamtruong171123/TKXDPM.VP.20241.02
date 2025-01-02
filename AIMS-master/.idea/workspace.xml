@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb170631-fae3-4c77-b459-2befc60a0491" name="Changes" comment="">
+    <list default="true" id="merged-id" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByBook.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByCD.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/business/media/search/FilterByDVD.java" afterDir="false" />
@@ -22,19 +23,8 @@
       <change afterPath="$PROJECT_DIR$/src/test/java/isd/aims/main/controller/PlaceOrderControllerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Cohesion,Coupling &amp; Solid Module ShippingFeeCalculator.docx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Mở rộng chức năng tính toán phí vận chuyển.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/IPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/VnPaySubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/InterbankSubsystem/vnPay/VnPaySubsystemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/media/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/listener/TransactionResultListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/CDRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/repository/impl/MediaRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/MediaForm.java" afterDir="false" />
@@ -123,9 +113,19 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging usecase/place-order",
-    "kotlin-language-version-configured": "true"
-  }
+    "git-widget-placeholder": "module/SearchAndSort-Cuong",
+    "kotlin-language-version-configured": "true",
+    "Application.App.executor": "Run",
+    "last_opened_file_path": "C:/Users/PC Giang/Documents/TKXDPM/TKXDPM.VP.20241.02/AIMS-master",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "Project Default",
+    "vue.rearranger.settings.migration": "true"
+}
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

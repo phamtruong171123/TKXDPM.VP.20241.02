@@ -56,6 +56,12 @@ public class HomeForm extends BaseForm implements Initializable {
     @FXML
     private SplitMenuButton splitMenuBtnSort;
 
+    @FXML
+    private Button previousPageBtn;
+
+    @FXML
+    private Button nextPageBtn;
+
     @SuppressWarnings("rawtypes")
     private List homeItems;
 
@@ -80,10 +86,11 @@ public class HomeForm extends BaseForm implements Initializable {
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        setBController(new HomeController());
         try {
+            setBController(new HomeController());
             getBController().setAllMedia();
-            List medium = getBController().getAllMedia();
+            List medium = getBController().getMediaPage(1);
+            getBController().setScreenMediaList(medium);
             showMediaItems(medium);
 
             getBController().setScreenMediaList(medium);
@@ -91,10 +98,30 @@ public class HomeForm extends BaseForm implements Initializable {
             throw new RuntimeException(e);
         }
 
-        aimsImage.setOnMouseClicked(e -> {
-            textFieldSearchBar.setText("");
-            getBController().setScreenMediaList(getBController().getAllMedia());
+        previousPageBtn.setOnAction(event -> {
             try {
+                int currentPage = getBController().decrementPage();
+                List<Media> mediaList = getBController().getMediaPage(currentPage);
+                showMediaItems(mediaList);
+            } catch (SQLException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        nextPageBtn.setOnAction(event -> {
+            try {
+                int currentPage = getBController().incrementPage();
+                List<Media> mediaList = getBController().getMediaPage(currentPage);
+                showMediaItems(mediaList);
+            } catch (SQLException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        aimsImage.setOnMouseClicked(e -> {
+            try {
+                textFieldSearchBar.setText("");
+                getBController().setScreenMediaList(getBController().getMediaPage(1));
                 showMediaItems(getBController().getScreenMediaList());
             } catch (SQLException | IOException ex) {
                 throw new RuntimeException(ex);
@@ -105,7 +132,7 @@ public class HomeForm extends BaseForm implements Initializable {
         setupSearchBar();
         setupCartIcon();
     }
-
+    
     private void addSortMenuItems() {
         for (SortOption option : SortOption.values()) {
             MenuItem menuItem = new MenuItem(option.getDisplayName());
@@ -128,8 +155,9 @@ public class HomeForm extends BaseForm implements Initializable {
             try {
                 String query = textFieldSearchBar.getText();
                 List<Media> filteredItems = getBController().getFilteredMedia(query);
-                showMediaItems(filteredItems);
                 getBController().setScreenMediaList(filteredItems);
+                showMediaItems(filteredItems);
+                getBController().resetCurrentPage();
             } catch (SQLException | IOException e) {
                 throw new RuntimeException(e);
             }
@@ -143,7 +171,13 @@ public class HomeForm extends BaseForm implements Initializable {
             menuItem.setGraphic(label);
             menuItem.setOnAction(event -> {
                 try {
-                    List<Media> filteredMediaList = getBController().filterByType(option);
+                    List<Media> filteredMediaList;
+                    if (!textFieldSearchBar.getText().equals("")) {
+                        filteredMediaList = getBController().filterByType(option);
+                    } else {
+                        filteredMediaList = getBController().chooseAllMediaWithType(option);
+                    }
+                    getBController().resetCurrentPage();
                     showMediaItems(filteredMediaList);
                 } catch (SQLException | IOException ex) {
                     throw new RuntimeException(ex);
