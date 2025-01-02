@@ -118,12 +118,17 @@ public class CartForm extends BaseForm {
 			// create order
 			Order order = placeOrderController.createOrder();
 
+
 			// display shipping form
 			DeliveryForm DeliveryFormHandler = new DeliveryForm(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
 			DeliveryFormHandler.setPreviousScreen(this);
 			DeliveryFormHandler.setHomeScreenHandler(homeScreenHandler);
 			DeliveryFormHandler.setScreenTitle("Shipping Screen");
 			DeliveryFormHandler.setBController(placeOrderController);
+			if (getPreviousScreen() instanceof DeliveryForm) {
+				DeliveryFormHandler = (DeliveryForm) getPreviousScreen();
+				DeliveryFormHandler.restoreDeliveryInfo(); // Khôi phục thông tin
+			}
 			DeliveryFormHandler.show();
 
 		} catch (MediaNotAvailableException e) {

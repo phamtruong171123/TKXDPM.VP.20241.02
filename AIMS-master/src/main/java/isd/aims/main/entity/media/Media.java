@@ -4,6 +4,7 @@ import isd.aims.main.repository.impl.MediaRepositoryImpl;
 import isd.aims.main.utils.Utils;
 
 import java.sql.SQLException;
+import java.util.Random;
 import java.util.logging.Logger;
 
 /**
@@ -23,6 +24,8 @@ public class Media {
     protected int quantity;
     protected String type;
     protected String imageURL;
+    protected boolean isSupportRushDelivery;
+    protected double weight;
 
 //    public Media() throws SQLException{
 //        stm = DBConnection.getConnection().createStatement();
@@ -37,6 +40,10 @@ public class Media {
         this.quantity = quantity;
         this.type = type;
         this.imageURL = imageURL;
+        double weight = Math.round((0.5 + (0.9 - 0.5) * new Random().nextDouble()) * 100.0) / 100.0;
+        boolean isRush = new Random().nextBoolean();
+        this.isSupportRushDelivery = isRush;
+        this.weight = weight;
         mediaRepository = new MediaRepositoryImpl();
 
         //stm = DBConnection.getConnection().createStatement();
@@ -78,7 +85,7 @@ public class Media {
     }
 
     public int getPrice() {
-        return this.price;
+        return this.price * 1000;
     }
 
     public Media setPrice(int price) {
@@ -107,6 +114,34 @@ public class Media {
     public Media setType(String type) {
         this.type = type;
         return this;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public boolean isSupportRushDelivery() {
+        return isSupportRushDelivery;
+    }
+
+    public void setSupportRushDelivery(boolean supportRushDelivery) {
+        isSupportRushDelivery = supportRushDelivery;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     @Override

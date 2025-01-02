@@ -8,6 +8,7 @@ import isd.aims.main.repository.IMediaRepository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MediaRepositoryImpl implements IMediaRepository {
     private final Statement stm;
@@ -54,6 +55,7 @@ public class MediaRepositoryImpl implements IMediaRepository {
         int quantity = res.getInt("quantity");
         String type = res.getString("type");
         String imageURL = res.getString("imageURL");
+
         return new Media(id, title, category, price, quantity, type, imageURL);
     }
 

@@ -1,5 +1,6 @@
 package isd.aims.main.entity.order;
 
+import isd.aims.main.entity.shipping.Shipment;
 import isd.aims.main.utils.Configs;
 
 import java.util.ArrayList;
@@ -7,10 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Order {
-
-    private int shippingFees;
     private List lstOrderMedia;
-    private HashMap<String, String> deliveryInfo;
+    private Shipment deliveryInfo;
     private Integer id;
 
     public Order(){
@@ -29,7 +28,7 @@ public class Order {
         this.lstOrderMedia.remove(om);
     }
 
-    public List getlstOrderMedia() {
+    public List<OrderMedia> getlstOrderMedia() {
         return this.lstOrderMedia;
     }
 
@@ -37,19 +36,11 @@ public class Order {
         this.lstOrderMedia = lstOrderMedia;
     }
 
-    public void setShippingFees(int shippingFees) {
-        this.shippingFees = shippingFees;
-    }
-
-    public int getShippingFees() {
-        return shippingFees;
-    }
-
-    public HashMap getDeliveryInfo() {
+    public Shipment getDeliveryInfo() {
         return deliveryInfo;
     }
 
-    public void setDeliveryInfo(HashMap deliveryInfo) {
+    public void setDeliveryInfo(Shipment deliveryInfo) {
         this.deliveryInfo = deliveryInfo;
     }
 
@@ -69,5 +60,6 @@ public class Order {
         }
         return (int) (amount + (Configs.PERCENT_VAT/100)*amount);
     }
+
 
 }
