@@ -1,21 +1,19 @@
 package isd.aims.main.views.invoice;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.logging.Logger;
-
 import isd.aims.main.InterbankSubsystem.IPayment;
 import isd.aims.main.InterbankSubsystem.VnPaySubsystem;
+import isd.aims.main.context.DeliveryFeeContext;
+import isd.aims.main.controller.PaymentController;
 import isd.aims.main.controller.PlaceOrderController;
+import isd.aims.main.entity.invoice.Invoice;
 import isd.aims.main.entity.shipping.Shipment;
 import isd.aims.main.exception.MediaNotAvailableException;
 import isd.aims.main.exception.PaymentException;
 import isd.aims.main.exception.ProcessInvoiceException;
-import isd.aims.main.controller.PaymentController;
-import isd.aims.main.entity.invoice.Invoice;
-import isd.aims.main.entity.order.OrderMedia;
+import isd.aims.main.strategy.DeliveryFeeStrategy;
+import isd.aims.main.strategy.impl.JoinedDeliveryFeeStrategy;
+import isd.aims.main.strategy.impl.RegularDeliveryFeeStrategy;
+import isd.aims.main.strategy.impl.RushDeliveryFeeStrategy;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.BaseForm;
@@ -28,241 +26,249 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.logging.Logger;
+
 public class InvoiceForm extends BaseForm {
 
-	private static Logger LOGGER = Utils.getLogger(InvoiceForm.class.getName());
+    private static final Logger LOGGER = Utils.getLogger(InvoiceForm.class.getName());
 
-	@FXML
-	private Label pageTitle;
+    @FXML
+    private Label pageTitle;
 
-	@FXML
-	private Label name;
+    @FXML
+    private Label name;
 
-	@FXML
-	private Label phone;
+    @FXML
+    private Label phone;
 
-	@FXML
-	private Label province;
+    @FXML
+    private Label email;
 
-	@FXML
-	private Label address;
+    @FXML
+    private Label province;
 
-	@FXML
-	private Label instructions;
+    @FXML
+    private Label address;
 
-	@FXML
-	private Label deliveryTimeLbl;
+    @FXML
+    private Label instructions;
 
-	@FXML
-	private Label rushDeliveryInstructionLbl;
+    @FXML
+    private Label deliveryTimeLbl;
 
-	@FXML
-	private Label priceIncludingVAT;
-	@FXML
-	private Label priceExcludingVAT;
+    @FXML
+    private Label rushDeliveryInstructionLbl;
 
-	@FXML
-	private Label shippingFees;
+    @FXML
+    private Label priceIncludingVAT;
+    @FXML
+    private Label priceExcludingVAT;
 
-	@FXML
-	private Label total;
+    @FXML
+    private Label shippingFees;
 
-	@FXML
-	private TextField deliveryTime;
+    @FXML
+    private Label total;
 
-	@FXML
-	private TextArea rushDeliveryInstruction;
+    @FXML
+    private TextField deliveryTime;
 
-	@FXML
-	private RadioButton regularDelivery;
+    @FXML
+    private TextArea rushDeliveryInstruction;
 
-	@FXML
-	private RadioButton rushDelivery;
+    @FXML
+    private RadioButton regularDelivery;
 
-	@FXML
-	private VBox vboxItems;
-	@FXML
-	private Button btnConfirm;
-	@FXML
-	private Button btnBack;
+    @FXML
+    private RadioButton rushDelivery;
 
-	private Invoice invoice;
+    @FXML
+    private VBox vboxItems;
+    @FXML
+    private Button btnConfirm;
+    @FXML
+    private Button btnBack;
 
-	public PlaceOrderController getBController() {
-		return (PlaceOrderController) super.getBController();
-	}
+    private final Invoice invoice;
 
-//	private void updateShippingFee() {
-////		int shippingFee = invoice.calculateShippingFee(invoice.getOrder());
-////		invoice.setShippingFee(shippingFee); // Cập nhật lại invoice
-//		shippingFees.setText(Utils.getCurrencyFormat(invoice.getShippingFee())); // Hiển thị phí vận chuyển
-//		total.setText(Utils.getCurrencyFormat(invoice.getTotalAmount())); // Cập nhật tổng số tiền
-//	}
+    public InvoiceForm(Stage stage, String screenPath, Invoice invoice) throws IOException {
+        super(stage, screenPath);
+        this.invoice = invoice;
+        this.setBController(new PlaceOrderController());
+        setInvoiceInfo();
+        deliveryTimeLbl.setVisible(false);
+        rushDeliveryInstructionLbl.setVisible(false);
+        deliveryTime.setVisible(false);
+        rushDeliveryInstruction.setVisible(false);
+        regularDelivery.setSelected(true);
+        rushDelivery.setSelected(false);
 
-//	private void updateShippingFees(String province) throws IOException, InterruptedException {
-//		this.order.getDeliveryInfo().setProvince(province);
-//		this.order = getBController().processDeliveryInfo(order);
-//		shippingFees.setText(Utils.getCurrencyFormat(order.getInvoice().getShippingFees()));
-//		total.setText(Utils.getCurrencyFormat(order.getInvoice().calculateTotalPrice()));
-//	}
-	private void updateInvoice() {
-	int newShippingFee = invoice.calculateShippingFee(invoice.getOrder());
-	invoice.setShippingFee(newShippingFee);
-	invoice.setTotalAmount(invoice.getTotalPriceIncludingVAT() + newShippingFee);
+        regularDelivery.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
+                if (isNowSelected) {
+                    rushDelivery.setSelected(false);
+                    invoice.getOrder().getDeliveryInfo().setRushDelivery(false);
+                    updateInvoice();
+                } else {
+                    rushDelivery.setSelected(true);
+                    deliveryTimeLbl.setVisible(false);
+                    rushDeliveryInstructionLbl.setVisible(false);
+                    deliveryTime.setVisible(false);
+                    rushDeliveryInstruction.setVisible(false);
+                }
+            }
+        });
 
-	// Update labels
-	shippingFees.setText(Utils.getCurrencyFormat(newShippingFee));
-	total.setText(Utils.getCurrencyFormat(invoice.getTotalAmount()));
-}
-	public InvoiceForm(Stage stage, String screenPath, Invoice invoice) throws IOException {
-		super(stage, screenPath);
-		this.invoice = invoice;
-		this.setBController(new PlaceOrderController());
-		setInvoiceInfo();
-		deliveryTimeLbl.setVisible(false);
-		rushDeliveryInstructionLbl.setVisible(false);
-		deliveryTime.setVisible(false);
-		rushDeliveryInstruction.setVisible(false);
-		regularDelivery.setSelected(true);
-		rushDelivery.setSelected(false);
+        rushDelivery.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
+                if (isNowSelected) {
+                    String status = getBController().validateRushShipping(invoice);
+                    regularDelivery.setSelected(false);
+                    if (status.equals("EMPTY")) {
+                        try {
+                            PopupForm.error("Empty province");
+                            rushDelivery.setSelected(false);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else if (status.equals("ADDRESS_NOT_SUPPORT")) {
+                        try {
+                            PopupForm.error("Address not support");
+                            rushDelivery.setSelected(false);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else if (status.equals("PRODUCT_NOT_SUPPORT")) {
+                        try {
+                            PopupForm.error("Product not support");
+                            rushDelivery.setSelected(false);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        regularDelivery.setSelected(false);
+                        invoice.getOrder().getDeliveryInfo().setRushDelivery(true);
+                        deliveryTimeLbl.setVisible(true);
+                        rushDeliveryInstructionLbl.setVisible(true);
+                        deliveryTime.setVisible(true);
+                        rushDeliveryInstruction.setVisible(true);
+                        updateInvoice();
+                    }
+                } else {
+                    regularDelivery.setSelected(true);
+                    deliveryTimeLbl.setVisible(false);
+                    rushDeliveryInstructionLbl.setVisible(false);
+                    deliveryTime.setVisible(false);
+                    rushDeliveryInstruction.setVisible(false);
+                }
+            }
+        });
 
-		regularDelivery.selectedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-				if (isNowSelected) {
-					rushDelivery.setSelected(false);
-					invoice.getOrder().getDeliveryInfo().setRushDelivery(false);
-					updateInvoice();
-//					setInvoiceInfo()s;
-//					updateShippingFee();
-				} else {
-					rushDelivery.setSelected(true);
-					deliveryTimeLbl.setVisible(false);
-					rushDeliveryInstructionLbl.setVisible(false);
-					deliveryTime.setVisible(false);
-					rushDeliveryInstruction.setVisible(false);
-//					setInvoiceInfo();
+        btnConfirm.setOnMouseClicked(e -> {
+            LOGGER.info("Pay Order button clicked");
+            try {
+                requestToPayOrder();
 
+            } catch (IOException | SQLException exp) {
+                LOGGER.severe("Cannot pay the order, see the logs");
+                exp.printStackTrace();
+                throw new PaymentException(Arrays.toString(exp.getStackTrace()).replaceAll(", ", "\n"));
+            }
 
-				}
-			}
-		});
+        });
+        btnBack.setOnMouseClicked(e -> {
+            LOGGER.info("Back button clicked");
+            if (getPreviousScreen() instanceof DeliveryForm deliveryForm) {
+                deliveryForm.restoreDeliveryInfo(); // Khôi phục thông tin
+                deliveryForm.show();
+            }
+        });
+    }
 
-		rushDelivery.selectedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-				if (isNowSelected) {
-					String status = getBController().validateRushShipping(invoice);
-					regularDelivery.setSelected(false);
-					if(status.equals("EMPTY")){
-						try {
-							PopupForm.error("Empty province");
-							rushDelivery.setSelected(false);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-					else if(status.equals("ADDRESS_NOT_SUPPORT")){
-						try {
-							PopupForm.error("Address not support");
-							rushDelivery.setSelected(false);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-					else if(status.equals("PRODUCT_NOT_SUPPORT")){
-						try {
-							PopupForm.error("Product not support");
-							rushDelivery.setSelected(false);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-					else{
-						regularDelivery.setSelected(false);
-						invoice.getOrder().getDeliveryInfo().setRushDelivery(true);
-						deliveryTimeLbl.setVisible(true);
-						rushDeliveryInstructionLbl.setVisible(true);
-						deliveryTime.setVisible(true);
-						rushDeliveryInstruction.setVisible(true);
-						updateInvoice();
-//						updateShippingFee();
-//						setInvoiceInfo();s
-					}
-				} else {
-					regularDelivery.setSelected(true);
-					deliveryTimeLbl.setVisible(false);
-					rushDeliveryInstructionLbl.setVisible(false);
-					deliveryTime.setVisible(false);
-					rushDeliveryInstruction.setVisible(false);
-//					setInvoiceInfo();
-				}
-			}
-		});
+    public PlaceOrderController getBController() {
+        return (PlaceOrderController) super.getBController();
+    }
 
-		btnConfirm.setOnMouseClicked(e -> {
-			LOGGER.info("Pay Order button clicked");
-			try {
-				requestToPayOrder();
+    /**
+     * The method updates invoice as user choose delivery method options
+     */
+    private void updateInvoice() {
+        DeliveryFeeStrategy deliveryStrategy;
+        DeliveryFeeContext deliveryContext = new DeliveryFeeContext();
 
-			} catch (IOException | SQLException exp) {
-				LOGGER.severe("Cannot pay the order, see the logs");
-				exp.printStackTrace();
-				throw new PaymentException(Arrays.toString(exp.getStackTrace()).replaceAll(", ", "\n"));
-			}
+        if (invoice.getOrder().getDeliveryInfo().isRushDelivery()) {
+            deliveryStrategy = new JoinedDeliveryFeeStrategy(new RegularDeliveryFeeStrategy(), new RushDeliveryFeeStrategy());
+        } else {
+            deliveryStrategy = new RegularDeliveryFeeStrategy();
+        }
 
-		});
-		btnBack.setOnMouseClicked(e -> {
-			LOGGER.info("Back button clicked");
-			if (getPreviousScreen() instanceof DeliveryForm) {
-				DeliveryForm deliveryForm = (DeliveryForm) getPreviousScreen();
-				deliveryForm.restoreDeliveryInfo(); // Khôi phục thông tin
-				deliveryForm.show();
-			}
-		});
-	}
+        // Tạo context với chiến lược tương ứng
+        deliveryContext.setDeliveryStrategy(deliveryStrategy);
 
-	@SuppressWarnings("unchecked")
-	private void setInvoiceInfo(){
-		Shipment deliveryInfo = invoice.getOrder().getDeliveryInfo();
-		name.setText(deliveryInfo.getName());
-		province.setText(deliveryInfo.getProvince());
-		instructions.setText(deliveryInfo.getInstruction());
-		if(deliveryInfo.getDistrict() != null){
-			System.out.println();
-			address.setText(deliveryInfo.getAddress() + ", " + deliveryInfo.getDistrict());
-		} else {
-			System.out.println();
-			address.setText(deliveryInfo.getAddress());
-		}
-		priceExcludingVAT.setText(Utils.getCurrencyFormat(invoice.getTotalPriceExcludingVAT()));
-		priceIncludingVAT.setText(Utils.getCurrencyFormat(invoice.getTotalPriceIncludingVAT()));
-		shippingFees.setText(Utils.getCurrencyFormat(invoice.getShippingFee()));
-		total.setText(Utils.getCurrencyFormat(invoice.getTotalAmount()));
-		invoice.getOrder().getlstOrderMedia().forEach(orderMedia -> {
-			try {
-					MediaInvoiceForm mis = new MediaInvoiceForm(Configs.INVOICE_MEDIA_SCREEN_PATH);
-					mis.setOrderMedia(orderMedia);
-					vboxItems.getChildren().add(mis.getContent());
+        // Tính phí vận chuyển mới
+        int newShippingFee = deliveryContext.calculateShippingFee(invoice.getOrder());
+        invoice.setShippingFee(newShippingFee);
+        invoice.setTotalAmount(invoice.getTotalPriceIncludingVAT() + newShippingFee);
 
-			} catch (IOException | SQLException e) {
-				System.err.println("errors: " + e.getMessage());
-				throw new ProcessInvoiceException(e.getMessage());
-			}
+        // Update labels
+        shippingFees.setText(Utils.getCurrencyFormat(newShippingFee));
+        total.setText(Utils.getCurrencyFormat(invoice.getTotalAmount()));
+    }
 
-		});
+    @SuppressWarnings("unchecked")
+    private void setInvoiceInfo() {
+        Shipment deliveryInfo = invoice.getOrder().getDeliveryInfo();
+        name.setText(deliveryInfo.getName());
+        phone.setText(deliveryInfo.getPhone());
+        email.setText(deliveryInfo.getEmail());
+        province.setText(deliveryInfo.getProvince());
+        instructions.setText(deliveryInfo.getInstruction());
+        if (deliveryInfo.getDistrict() != null) {
+            System.out.println();
+            address.setText(deliveryInfo.getAddress() + ", " + deliveryInfo.getDistrict());
+        } else {
+            System.out.println();
+            address.setText(deliveryInfo.getAddress());
+        }
+        priceExcludingVAT.setText(Utils.getCurrencyFormat(invoice.getTotalPriceExcludingVAT()));
+        priceIncludingVAT.setText(Utils.getCurrencyFormat(invoice.getTotalPriceIncludingVAT()));
+        shippingFees.setText(Utils.getCurrencyFormat(invoice.getShippingFee()));
+        total.setText(Utils.getCurrencyFormat(invoice.getTotalAmount()));
+        invoice.getOrder().getlstOrderMedia().forEach(orderMedia -> {
+            try {
+                MediaInvoiceForm mis = new MediaInvoiceForm(Configs.INVOICE_MEDIA_SCREEN_PATH);
+                mis.setOrderMedia(orderMedia);
+                vboxItems.getChildren().add(mis.getContent());
 
-	}
+            } catch (IOException | SQLException e) {
+                System.err.println("errors: " + e.getMessage());
+                throw new ProcessInvoiceException(e.getMessage());
+            }
 
-	public void requestToPayOrder() throws SQLException, IOException {
-		try {
-			// create placeOrderController and process the order
-			IPayment vnPayService = new VnPaySubsystem();
-			PaymentController payOrderController = new PaymentController(vnPayService);
-			payOrderController.payOrder(invoice.getTotalAmount(), "Thanh toán hóa đơn AIMS");
-			this.stage.close();
-		} catch (MediaNotAvailableException e) {
+        });
 
-		}
-	}
+    }
+
+    /**
+     * The method handles when user wants to pay order
+     *
+     * @throws SQLException
+     * @throws IOException
+     */
+    public void requestToPayOrder() throws SQLException, IOException {
+        try {
+            // create placeOrderController and process the order
+            IPayment vnPayService = new VnPaySubsystem();
+            PaymentController payOrderController = new PaymentController(vnPayService);
+            payOrderController.payOrder(invoice.getTotalAmount(), "Thanh toán hóa đơn AIMS");
+            this.stage.close();
+        } catch (MediaNotAvailableException e) {
+
+        }
+    }
 }

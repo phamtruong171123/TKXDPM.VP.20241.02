@@ -26,11 +26,26 @@
          <rowConstraints>
             <RowConstraints maxHeight="108.60001220703126" minHeight="10.0" prefHeight="63.999996948242185" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="168.5999969482422" minHeight="10.0" prefHeight="64.40000610351564" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="168.5999969482422" minHeight="10.0" prefHeight="64.40000610351564" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="313.59999389648436" minHeight="10.0" prefHeight="67.19997558593752" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="292.80002441406253" minHeight="10.0" prefHeight="119.1999450683594" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="215.8000549316406" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="292.80002441406253" minHeight="10.0" prefHeight="138.2" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="173.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="21.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="16.0" text="Email">
+                     <font>
+                        <Font name="Segoe UI" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label layoutX="29.0" layoutY="16.0" prefHeight="30.0" prefWidth="97.0" text="Name">
@@ -48,6 +63,11 @@
                   </Label>
                </children>
             </Pane>
+            <TextField fx:id="email" prefHeight="50.0" promptText="ABC@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI" size="24.0" />
+               </font>
+            </TextField>
             <TextField fx:id="name" prefHeight="50.0" promptText="(a-zA-Z)" GridPane.columnIndex="1">
                <font>
                   <Font name="Segoe UI" size="24.0" />
@@ -58,12 +78,12 @@
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="address" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="address" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="instructions" alignment="TOP_LEFT" prefHeight="140.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TextField fx:id="instructions" alignment="TOP_LEFT" prefHeight="140.0" prefWidth="843.0" promptText="(a-zA-Z)" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI" size="24.0" />
                </font>
@@ -84,29 +104,6 @@
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
-                  <Label layoutX="38.0" layoutY="44.0" text="Address">
-                     <font>
-                        <Font name="Segoe UI" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="49.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
-               <children>
-                  <Label layoutX="24.0" layoutY="77.0" text="Shipping&#10;Instructions">
-                     <font>
-                        <Font name="Segoe UI" size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
-               <children>
                   <Label layoutX="35.0" layoutY="18.0" prefHeight="30.0" prefWidth="99.0" text="City">
                      <font>
                         <Font name="Segoe UI" size="24.0" />
@@ -119,7 +116,30 @@
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="66.0" prefWidth="571.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label layoutX="38.0" layoutY="44.0" text="Address">
+                     <font>
+                        <Font name="Segoe UI" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="49.0" prefHeight="20.0" prefWidth="22.0" text="*" textAlignment="CENTER" textFill="#eb0d0d">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label layoutX="24.0" layoutY="77.0" text="Shipping&#10;Instructions">
+                     <font>
+                        <Font name="Segoe UI" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="66.0" prefWidth="571.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                   <Label fx:id="districtLbl" layoutX="322.0" layoutY="18.0" text="District">
                      <font>

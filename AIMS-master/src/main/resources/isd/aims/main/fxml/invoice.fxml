@@ -92,6 +92,7 @@
          <rowConstraints>
             <RowConstraints maxHeight="108.60001220703126" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="168.5999969482422" minHeight="10.0" prefHeight="41.99999999999999" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="168.5999969482422" minHeight="10.0" prefHeight="41.99999999999999" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="313.59999389648436" minHeight="10.0" prefHeight="36.8" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="292.80002441406253" minHeight="10.0" prefHeight="41.8" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="311.8000549316406" minHeight="10.0" prefHeight="90.6" vgrow="SOMETIMES" />
@@ -116,7 +117,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label prefHeight="30.0" prefWidth="204.0" text="City" GridPane.rowIndex="2">
+            <Label prefHeight="30.0" prefWidth="204.0" text="City" GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
@@ -124,7 +125,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Address" GridPane.rowIndex="3">
+            <Label text="Address" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
@@ -132,7 +133,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Shipping&#10;Instructions" GridPane.rowIndex="4">
+            <Label text="Shipping&#10;Instructions" GridPane.rowIndex="5">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
@@ -140,7 +141,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Delivery Method" wrapText="true" GridPane.rowIndex="5">
+            <Label text="Delivery Method" wrapText="true" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -148,7 +149,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="deliveryTimeLbl" text="Delivery Time" GridPane.rowIndex="6">
+            <Label fx:id="deliveryTimeLbl" text="Delivery Time" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="10.0" />
                </GridPane.margin>
@@ -156,7 +157,7 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="rushDeliveryInstructionLbl" text="Rush Delivery Instructions" wrapText="true" GridPane.rowIndex="7">
+            <Label fx:id="rushDeliveryInstructionLbl" text="Rush Delivery Instructions" wrapText="true" GridPane.rowIndex="8">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -177,22 +178,22 @@
                   <Font name="Segoe UI" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="province" prefHeight="34.0" prefWidth="475.0" text="Hanoi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="province" prefHeight="34.0" prefWidth="475.0" text="Hanoi" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="address" prefHeight="38.0" prefWidth="467.0" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="address" prefHeight="38.0" prefWidth="467.0" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="instructions" prefHeight="94.0" prefWidth="479.0" text="Shipping Instructions" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="instructions" prefHeight="94.0" prefWidth="479.0" text="Shipping Instructions" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
             </Label>
-            <RadioButton fx:id="regularDelivery" mnemonicParsing="false" text="Regular Delivery" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <RadioButton fx:id="regularDelivery" mnemonicParsing="false" text="Regular Delivery" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
@@ -203,7 +204,7 @@
                   <Insets top="-50.0" />
                </GridPane.margin>
             </RadioButton>
-            <RadioButton fx:id="rushDelivery" mnemonicParsing="false" text="Rush Delivery" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <RadioButton fx:id="rushDelivery" mnemonicParsing="false" text="Rush Delivery" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
@@ -211,14 +212,27 @@
                   <Insets top="40.0" />
                </GridPane.margin>
             </RadioButton>
-            <TextField fx:id="deliveryTime" prefHeight="50.0" prefWidth="436.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <TextField fx:id="deliveryTime" prefHeight="50.0" prefWidth="436.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font></TextField>
-            <TextArea fx:id="rushDeliveryInstruction" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextArea fx:id="rushDeliveryInstruction" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font></TextArea>
+            <Label text="Email" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="email" prefHeight="31.0" prefWidth="466.0" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
       <ScrollPane fx:id="vboxIte" hbarPolicy="NEVER" layoutX="670.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="670.0">

@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /**
  * This class controls the flow of place order usecase in our AIMS project
@@ -90,8 +91,22 @@ public class PlaceOrderController extends BaseController{
         if (deliveryInfo == null) return false;
         String name = deliveryInfo.getName();
         String phone = deliveryInfo.getPhone();
+        String email = deliveryInfo.getEmail();
         String address = deliveryInfo.getAddress();
-        return validateName(name) && validatePhoneNumber(phone) && validateAddress(address);
+        return validateName(name) && validatePhoneNumber(phone) && validateEmail(email) && validateAddress(address);
+    }
+
+    /**
+     * The method validates the email
+     * @param email
+     * @return
+     */
+    private boolean validateEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
+        return Pattern.matches(emailRegex, email);
     }
 
 
@@ -149,6 +164,11 @@ public class PlaceOrderController extends BaseController{
         return name.matches("^[a-zA-Z\\s]+$");  // Check if the name contains only letters (a-z, A-Z)
     }
 
+    /**
+     * The method validates the customer's address
+     * @param address
+     * @return
+     */
     public boolean validateAddress(String address) {
         if (address == null || address.isEmpty()) {
             return false;  // Address must not be null or empty
@@ -160,6 +180,11 @@ public class PlaceOrderController extends BaseController{
         return address.matches("[a-zA-Z0-9\\s]+");  // Only letters, digits, or slashes are allowed
     }
 
+    /**
+     * The method validates the rush delivery information
+     * @param invoice
+     * @return
+     */
     public String validateRushShipping(Invoice invoice){
         if(invoice.getOrder().getDeliveryInfo().getProvince() == null ) return "EMPTY";
         if(!invoice.getOrder().getDeliveryInfo().validateRushDeliveryInfo()) return "ADDRESS_NOT_SUPPORT";

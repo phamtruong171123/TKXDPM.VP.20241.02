@@ -6,6 +6,7 @@ import java.util.List;
 public class Shipment {
     private String name;
     private String phone;
+    private String email;
     private String province;
     private String district;
     private String address;
@@ -14,9 +15,10 @@ public class Shipment {
     private String rushDeliveryTime;
     private String rushDeliveryInstruction;
 
-    public Shipment(String name, String phone, String province, String address, String instruction, String district) {
+    public Shipment(String name, String phone, String email, String province, String address, String instruction, String district) {
         this.name = name;
         this.phone = phone;
+        this.email = email;
         this.province = province;
         this.address = address;
         this.instruction = instruction;
@@ -41,6 +43,15 @@ public class Shipment {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     public String getProvince() {
         return province;
@@ -141,6 +152,7 @@ public class Shipment {
         return "Shipment{" +
                 "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
                 ", province='" + province + '\'' +
                 ", address='" + address + '\'' +
                 ", instruction='" + instruction + '\'' +
