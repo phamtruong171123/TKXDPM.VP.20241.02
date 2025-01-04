@@ -10,10 +10,6 @@ public class CD extends Media {
     String musicType;
     Date releasedDate;
 
-//    public CD() throws SQLException{
-//
-//    }
-
     public CD(int id, String title, String category, int price, int quantity, String type, String imageURL, String artist,
             String recordLabel, String musicType, Date releasedDate) throws SQLException{
         super(id, title, category, price, quantity, type, imageURL);
@@ -65,41 +61,5 @@ public class CD extends Media {
                 + "'" + ", musicType='" + musicType + "'" + ", releasedDate='"
                 + releasedDate + "'" + "}";
     }
-
-//    @Override
-//    public Media getMediaById(int id) throws SQLException {
-//        String sql = "SELECT * FROM "+
-//                     "aims.CD " +
-//                     "INNER JOIN aims.Media " +
-//                     "ON Media.id = CD.id " +
-//                     "where Media.id = " + id + ";";
-//        ResultSet res = stm.executeQuery(sql);
-//		if(res.next()) {
-//
-//            // from media table
-//            String title = "";
-//            String type = res.getString("type");
-//            int price = res.getInt("price");
-//            String category = res.getString("category");
-//            int quantity = res.getInt("quantity");
-//
-//            // from CD table
-//            String artist = res.getString("artist");
-//            String recordLabel = res.getString("recordLabel");
-//            String musicType = res.getString("musicType");
-//            Date releasedDate = res.getDate("releasedDate");
-//
-//            return new CD(id, title, category, price, quantity, type,
-//                          artist, recordLabel, musicType, releasedDate);
-//
-//		} else {
-//			throw new SQLException();
-//		}
-//    }
-//
-//    @Override
-//    public List getAllMedia() {
-//        return null;
-//    }
 
 }

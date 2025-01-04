@@ -19,7 +19,7 @@ public class CDRepositoryImpl implements IMediaRepository<CD> {
     @Override
     public CD getById(int id) throws SQLException {
         String sql = "SELECT * FROM " +
-                "aims.CD " + "INNER JOIN aims.Media " +
+                "CD " + "INNER JOIN Media " +
                 "ON Media.id = CD.id " +
                 "where Media.id = " + id + ";";
         ResultSet res = stm.executeQuery(sql);
@@ -56,21 +56,5 @@ public class CDRepositoryImpl implements IMediaRepository<CD> {
         String musicType = res.getString("musicType");
         Date releasedDate = res.getDate("releasedDate");
         return new CD(id, title, category, price, quantity, type, imageURL, artist, recordLabel, musicType, releasedDate);
-    }
-
-    /**
-     * Lọc dữ liệu bởi thuộc tính type của sản phẩm, mỗi lần lấy ra một số lượng nhất định sản phẩm
-     * @Parameter limit INT: số lượng sản phẩm muốn lấy ra
-     * @Parameter offset INT: chỉ sổ của phần tử bắt đầu select
-     * @RETURN Danh sách sản phẩm
-     **/
-    public List<Media> getByTypeWithPagination(int limit, int offset) throws SQLException {
-        String sql = "SELECT * FROM Media WHERE type = 'cd'" + " LIMIT " + limit + " OFFSET " + offset;
-        List<Media> medium = new ArrayList<>();
-        ResultSet res = stm.executeQuery(sql);
-        while (res.next()) {
-            medium.add(MediaRepositoryImpl.mapToMedia(res));
-        }
-        return medium;
     }
 }

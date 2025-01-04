@@ -18,7 +18,12 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.shape.Box?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="820.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            prefHeight="820.0"
+            prefWidth="1326.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- Header -->
       <HBox prefHeight="104.0" prefWidth="1326.0" style="-fx-background-color: #ccebff; -fx-border-color: #33adff;">
@@ -101,7 +106,7 @@
          </children>
       </HBox>
 
-            <!-- Body -->
+      <!-- Body -->
       <ScrollPane layoutX="13.0" layoutY="165.0" prefHeight="629.0" prefWidth="1300.0">
          <content>
             <VBox fx:id="vboxMedia" prefHeight="629.0" prefWidth="1283.0">

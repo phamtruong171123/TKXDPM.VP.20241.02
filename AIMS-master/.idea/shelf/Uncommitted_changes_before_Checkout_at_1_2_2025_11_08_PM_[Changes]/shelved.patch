@@ -1,0 +1,477 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e0f20632-74b4-4c2f-8164-ada7716c9892\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/shipping.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/shipping.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2eHBP9Hj6CPPkQUGAMePZrAnBnq\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.App.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"usecase/place-order\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/PC Giang/Documents/TKXDPM/TKXDPM.VP.20241.02/AIMS-master\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"fileTemplates\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\2024_1\\TA\\AIMS\\src\\main\\resources\\isd\\aims\\main\\assets\\db\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main/common/exception\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main/subsystem\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/resources\" />\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/isd/aims/main\" />\r\n      <recent name=\"$PROJECT_DIR$/src\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"isd.aims.main\" />\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.App\">\r\n    <configuration name=\"App\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.App\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"DBConnection\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.entity.db.DBConnection\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.entity.db.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"isd.aims.main.HelloApplication\" />\r\n      <module name=\"main\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"isd.aims.main.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"JUnit5ExampleTest.justAnExample\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"main\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"JUnit5ExampleTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"justAnExample\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"AIMS\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"AIMS\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.App\" />\r\n        <item itemvalue=\"Application.DBConnection\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n        <item itemvalue=\"JUnit.JUnit5ExampleTest.justAnExample\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e0f20632-74b4-4c2f-8164-ada7716c9892\" name=\"Changes\" comment=\"\" />\r\n      <created>1711551598406</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1711551598406</updated>\r\n      <workItem from=\"1711551599615\" duration=\"86000\" />\r\n      <workItem from=\"1711565587574\" duration=\"884000\" />\r\n      <workItem from=\"1711566476068\" duration=\"5634000\" />\r\n      <workItem from=\"1711606179284\" duration=\"3009000\" />\r\n      <workItem from=\"1711610127046\" duration=\"7132000\" />\r\n      <workItem from=\"1711704117227\" duration=\"331000\" />\r\n      <workItem from=\"1711705542704\" duration=\"92000\" />\r\n      <workItem from=\"1711705655102\" duration=\"192000\" />\r\n      <workItem from=\"1711708662643\" duration=\"151000\" />\r\n      <workItem from=\"1711708827461\" duration=\"827000\" />\r\n      <workItem from=\"1711709659461\" duration=\"28000\" />\r\n      <workItem from=\"1711709697581\" duration=\"246000\" />\r\n      <workItem from=\"1714721010325\" duration=\"2124000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/order/Order.java</url>\r\n          <line>31</line>\r\n          <option name=\"timeStamp\" value=\"26\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>\r\n          <line>60</line>\r\n          <option name=\"timeStamp\" value=\"44\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java</url>\r\n          <line>107</line>\r\n          <option name=\"timeStamp\" value=\"64\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>106</line>\r\n          <option name=\"timeStamp\" value=\"152\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>107</line>\r\n          <option name=\"timeStamp\" value=\"153\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>122</line>\r\n          <option name=\"timeStamp\" value=\"159\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>123</line>\r\n          <option name=\"timeStamp\" value=\"160\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>124</line>\r\n          <option name=\"timeStamp\" value=\"161\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>135</line>\r\n          <option name=\"timeStamp\" value=\"165\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java</url>\r\n          <line>56</line>\r\n          <option name=\"timeStamp\" value=\"173\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>75</line>\r\n          <option name=\"timeStamp\" value=\"201\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>74</line>\r\n          <option name=\"timeStamp\" value=\"202\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>77</line>\r\n          <option name=\"timeStamp\" value=\"203\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>78</line>\r\n          <option name=\"timeStamp\" value=\"204\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>80</line>\r\n          <option name=\"timeStamp\" value=\"205\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>95</line>\r\n          <option name=\"timeStamp\" value=\"206\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>117</line>\r\n          <option name=\"timeStamp\" value=\"236\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>115</line>\r\n          <properties>\r\n            <option name=\"lambda-ordinal\" value=\"-1\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"237\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>116</line>\r\n          <option name=\"timeStamp\" value=\"238\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>188</line>\r\n          <properties>\r\n            <option name=\"lambda-ordinal\" value=\"-10\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"239\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>189</line>\r\n          <properties>\r\n            <option name=\"lambda-ordinal\" value=\"-10\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"240\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>190</line>\r\n          <properties>\r\n            <option name=\"lambda-ordinal\" value=\"-10\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"241\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>191</line>\r\n          <option name=\"timeStamp\" value=\"242\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>134</line>\r\n          <option name=\"timeStamp\" value=\"245\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>141</line>\r\n          <option name=\"timeStamp\" value=\"246\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>148</line>\r\n          <option name=\"timeStamp\" value=\"247\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>158</line>\r\n          <option name=\"timeStamp\" value=\"248\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>166</line>\r\n          <option name=\"timeStamp\" value=\"249\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>203</line>\r\n          <option name=\"timeStamp\" value=\"250\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>205</line>\r\n          <option name=\"timeStamp\" value=\"251\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>112</line>\r\n          <option name=\"timeStamp\" value=\"253\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>120</line>\r\n          <option name=\"timeStamp\" value=\"255\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>136</line>\r\n          <option name=\"timeStamp\" value=\"256\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>143</line>\r\n          <option name=\"timeStamp\" value=\"257\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>150</line>\r\n          <option name=\"timeStamp\" value=\"258\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>174</line>\r\n          <option name=\"timeStamp\" value=\"259\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>176</line>\r\n          <option name=\"timeStamp\" value=\"260\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>177</line>\r\n          <option name=\"timeStamp\" value=\"261\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>130</line>\r\n          <option name=\"timeStamp\" value=\"264\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>119</line>\r\n          <option name=\"timeStamp\" value=\"265\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>118</line>\r\n          <option name=\"timeStamp\" value=\"266\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>146</line>\r\n          <option name=\"timeStamp\" value=\"267\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>131</line>\r\n          <option name=\"timeStamp\" value=\"269\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>102</line>\r\n          <option name=\"timeStamp\" value=\"270\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>146</line>\r\n          <option name=\"timeStamp\" value=\"271\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>150</line>\r\n          <option name=\"timeStamp\" value=\"272\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>148</line>\r\n          <option name=\"timeStamp\" value=\"273\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>87</line>\r\n          <option name=\"timeStamp\" value=\"274\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>127</line>\r\n          <option name=\"timeStamp\" value=\"278\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>128</line>\r\n          <option name=\"timeStamp\" value=\"279\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>\r\n          <line>129</line>\r\n          <option name=\"timeStamp\" value=\"280\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>137</line>\r\n          <properties>\r\n            <option name=\"lambda-ordinal\" value=\"-10\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"281\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>\r\n          <line>139</line>\r\n          <option name=\"timeStamp\" value=\"282\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>88</line>\r\n          <option name=\"timeStamp\" value=\"283\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>\r\n          <line>63</line>\r\n          <option name=\"timeStamp\" value=\"302\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>182</line>\r\n          <option name=\"timeStamp\" value=\"303\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>199</line>\r\n          <option name=\"timeStamp\" value=\"309\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>\r\n          <line>77</line>\r\n          <option name=\"timeStamp\" value=\"316\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>\r\n          <line>65</line>\r\n          <option name=\"timeStamp\" value=\"318\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/order/Order.java</url>\r\n          <line>43</line>\r\n          <option name=\"timeStamp\" value=\"319\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>184</line>\r\n          <option name=\"timeStamp\" value=\"320\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>\r\n          <line>32</line>\r\n          <option name=\"timeStamp\" value=\"324\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>\r\n          <line>33</line>\r\n          <option name=\"timeStamp\" value=\"325\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>\r\n          <line>34</line>\r\n          <option name=\"timeStamp\" value=\"326\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>\r\n          <line>245</line>\r\n          <option name=\"timeStamp\" value=\"337\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>\r\n          <line>200</line>\r\n          <option name=\"timeStamp\" value=\"340\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>\r\n          <line>9</line>\r\n          <option name=\"timeStamp\" value=\"345\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>\r\n          <line>44</line>\r\n          <option name=\"timeStamp\" value=\"346\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>\r\n          <line>41</line>\r\n          <option name=\"timeStamp\" value=\"347\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>\r\n          <line>39</line>\r\n          <option name=\"timeStamp\" value=\"348\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RushDeliveryFeeStrategy.java</url>\r\n          <line>12</line>\r\n          <option name=\"timeStamp\" value=\"350\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9fe386c516ecb9c9a2b1c3a6df4bda88d84716bd)
++++ b/.idea/workspace.xml	(date 1735833658296)
+@@ -5,14 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="e0f20632-74b4-4c2f-8164-ada7716c9892" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/invoice.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/shipping.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/isd/aims/main/fxml/shipping.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,14 +16,38 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Interface" />
+         <option value="Class" />
++        <option value="Enum" />
++        <option value="Interface" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$/.." value="module/SearchAndSort-Cuong" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+   </component>
++  <component name="GitHubPullRequestState"><![CDATA[{
++  "prStates": [
++    {
++      "id": {
++        "id": "PR_kwDONcdoCM6GAkKP",
++        "number": 1
++      },
++      "lastSeen": 1734857946491
++    },
++    {
++      "id": {
++        "id": "PR_kwDONcdoCM6GltmI",
++        "number": 3
++      },
++      "lastSeen": 1735833088653
++    }
++  ]
++}]]></component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+@@ -70,7 +88,6 @@
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+     "run.code.analysis.last.selected.profile": "pProject Default",
+-    "settings.editor.selected.configurable": "fileTemplates",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -160,11 +177,20 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Application.App" />
+-        <item itemvalue="Application.DBConnection" />
++        <item itemvalue="JUnit.JUnit5ExampleTest.justAnExample" />
+         <item itemvalue="Application.HelloApplication" />
++        <item itemvalue="Application.DBConnection" />
+         <item itemvalue="JUnit.JUnit5ExampleTest.justAnExample" />
+       </list>
+     </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
++        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
++      </set>
++    </attachedChunks>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -207,375 +233,14 @@
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+       <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/order/Order.java</url>
+-          <line>31</line>
+-          <option name="timeStamp" value="26" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/MediaForm.java</url>
+-          <line>60</line>
+-          <option name="timeStamp" value="44" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/home/HomeForm.java</url>
+-          <line>107</line>
+-          <option name="timeStamp" value="64" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>106</line>
+-          <option name="timeStamp" value="152" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>107</line>
+-          <option name="timeStamp" value="153" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>122</line>
+-          <option name="timeStamp" value="159" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>123</line>
+-          <option name="timeStamp" value="160" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>124</line>
+-          <option name="timeStamp" value="161" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>135</line>
+-          <option name="timeStamp" value="165" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/cart/Cart.java</url>
+-          <line>56</line>
+-          <option name="timeStamp" value="173" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>75</line>
+-          <option name="timeStamp" value="201" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>74</line>
+-          <option name="timeStamp" value="202" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>77</line>
+-          <option name="timeStamp" value="203" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>78</line>
+-          <option name="timeStamp" value="204" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>80</line>
+-          <option name="timeStamp" value="205" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>95</line>
+-          <option name="timeStamp" value="206" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>117</line>
+-          <option name="timeStamp" value="236" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>115</line>
+-          <properties>
+-            <option name="lambda-ordinal" value="-1" />
+-          </properties>
+-          <option name="timeStamp" value="237" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>116</line>
+-          <option name="timeStamp" value="238" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>188</line>
+-          <properties>
+-            <option name="lambda-ordinal" value="-10" />
+-          </properties>
+-          <option name="timeStamp" value="239" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>189</line>
+-          <properties>
+-            <option name="lambda-ordinal" value="-10" />
+-          </properties>
+-          <option name="timeStamp" value="240" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>190</line>
+-          <properties>
+-            <option name="lambda-ordinal" value="-10" />
+-          </properties>
+-          <option name="timeStamp" value="241" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>191</line>
+-          <option name="timeStamp" value="242" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>134</line>
+-          <option name="timeStamp" value="245" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>141</line>
+-          <option name="timeStamp" value="246" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>148</line>
+-          <option name="timeStamp" value="247" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>158</line>
+-          <option name="timeStamp" value="248" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>166</line>
+-          <option name="timeStamp" value="249" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>203</line>
+-          <option name="timeStamp" value="250" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>205</line>
+-          <option name="timeStamp" value="251" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>112</line>
+-          <option name="timeStamp" value="253" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>120</line>
+-          <option name="timeStamp" value="255" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>136</line>
+-          <option name="timeStamp" value="256" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>143</line>
+-          <option name="timeStamp" value="257" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>150</line>
+-          <option name="timeStamp" value="258" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>174</line>
+-          <option name="timeStamp" value="259" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>176</line>
+-          <option name="timeStamp" value="260" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>177</line>
+-          <option name="timeStamp" value="261" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>130</line>
+-          <option name="timeStamp" value="264" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>119</line>
+-          <option name="timeStamp" value="265" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>118</line>
+-          <option name="timeStamp" value="266" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>146</line>
+-          <option name="timeStamp" value="267" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>131</line>
+-          <option name="timeStamp" value="269" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>102</line>
+-          <option name="timeStamp" value="270" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>146</line>
+-          <option name="timeStamp" value="271" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>150</line>
+-          <option name="timeStamp" value="272" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>148</line>
+-          <option name="timeStamp" value="273" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
++        <line-breakpoint enabled="true" type="java-method">
+           <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>87</line>
+-          <option name="timeStamp" value="274" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>127</line>
+-          <option name="timeStamp" value="278" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>128</line>
+-          <option name="timeStamp" value="279" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/cart/CartForm.java</url>
+-          <line>129</line>
+-          <option name="timeStamp" value="280" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+           <line>137</line>
+-          <properties>
+-            <option name="lambda-ordinal" value="-10" />
++          <properties class="isd.aims.main.views.shipping.DeliveryForm">
++            <option name="EMULATED" value="true" />
++            <option name="WATCH_EXIT" value="false" />
+           </properties>
+-          <option name="timeStamp" value="281" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/shipping/Shipment.java</url>
+-          <line>139</line>
+-          <option name="timeStamp" value="282" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>88</line>
+-          <option name="timeStamp" value="283" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/controller/PlaceOrderController.java</url>
+-          <line>63</line>
+-          <option name="timeStamp" value="302" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>182</line>
+-          <option name="timeStamp" value="303" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>199</line>
+-          <option name="timeStamp" value="309" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>
+-          <line>77</line>
+-          <option name="timeStamp" value="316" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>
+-          <line>65</line>
+-          <option name="timeStamp" value="318" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/order/Order.java</url>
+-          <line>43</line>
+-          <option name="timeStamp" value="319" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>184</line>
+-          <option name="timeStamp" value="320" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>
+-          <line>32</line>
+-          <option name="timeStamp" value="324" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>
+-          <line>33</line>
+-          <option name="timeStamp" value="325" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/entity/invoice/Invoice.java</url>
+-          <line>34</line>
+-          <option name="timeStamp" value="326" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/invoice/InvoiceForm.java</url>
+-          <line>245</line>
+-          <option name="timeStamp" value="337" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/views/shipping/DeliveryForm.java</url>
+-          <line>200</line>
+-          <option name="timeStamp" value="340" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>
+-          <line>9</line>
+-          <option name="timeStamp" value="345" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>
+-          <line>44</line>
+-          <option name="timeStamp" value="346" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>
+-          <line>41</line>
+-          <option name="timeStamp" value="347" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RegularDeliveryFeeStrategy.java</url>
+-          <line>39</line>
+-          <option name="timeStamp" value="348" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/isd/aims/main/strategy/impl/RushDeliveryFeeStrategy.java</url>
+-          <line>12</line>
+-          <option name="timeStamp" value="350" />
++          <option name="timeStamp" value="14" />
+         </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>

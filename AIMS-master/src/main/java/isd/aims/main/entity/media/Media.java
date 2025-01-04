@@ -27,9 +27,6 @@ public class Media {
     protected boolean isSupportRushDelivery;
     protected double weight;
 
-//    public Media() throws SQLException{
-//        stm = DBConnection.getConnection().createStatement();
-//    }
     private MediaRepositoryImpl mediaRepository;
 
     public Media (int id, String title, String category, int price, int quantity, String type, String imageURL) throws SQLException{

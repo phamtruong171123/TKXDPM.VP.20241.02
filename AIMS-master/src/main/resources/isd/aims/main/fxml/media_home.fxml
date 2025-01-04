@@ -14,7 +14,7 @@
 <AnchorPane prefHeight="211.0" prefWidth="298.0" style="-fx-border-color: #ccd9ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- Bìa -->
-      <ImageView fx:id="mediaImage" fitHeight="152.0" fitWidth="160.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mediaImage" fitHeight="152.0" fitWidth="160.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../fxml/images/Logo.png" />
          </image>
@@ -26,7 +26,7 @@
             <!-- Title -->
             <VBox prefHeight="39.0" prefWidth="110.0">
                <children>
-                  <Label fx:id="mediaTitle" alignment="CENTER" prefHeight="45.0" prefWidth="110.0" text="  Title" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="mediaTitle" alignment="CENTER" prefHeight="45.0" prefWidth="110.0" text="  Title" textAlignment="CENTER" wrapText="true" style="-fx-cursor: hand;">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>

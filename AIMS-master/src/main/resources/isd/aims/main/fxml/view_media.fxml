@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Spinner?>
+
+<AnchorPane maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="768.0"
+            prefWidth="1366.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <!-- Header -->
+      <HBox layoutX="22.0" layoutY="9.0">
+         <children>
+              <!-- Back to Home -->
+              <ImageView fx:id="aimsImage" fitHeight="73.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <image>
+                      <Image url="@images/Logo.png" />
+                  </image>
+              </ImageView>
+
+              <!-- TITLE: CART -->
+              <Label fx:id="pageTitle" text="CART" textAlignment="CENTER" textFill="#5091e6">
+                  <font>
+                      <Font name="Segoe UI Semibold" size="42.0" />
+                  </font>
+              </Label>
+         </children>
+      </HBox>
+
+        <!-- Body -->
+      <HBox layoutX="163.0" layoutY="135.0" prefWidth="1001.0">
+         <children>
+                <!-- Media Image -->
+                <VBox fx:id="vboxCart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="497.0">
+                   <children>
+                      <ImageView fx:id="mediaImage" fitHeight="370.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                         <image>
+                            <Image url="@images/book/book2.jpg" />
+                         </image>
+                      </ImageView>
+                   </children>
+                </VBox>
+
+                <VBox prefWidth="471.0">
+                    <children>
+                        <!-- Title -->
+                      <Label fx:id="mediaTitle" prefHeight="17.0" prefWidth="482.0" text="Book1" wrapText="true">
+                         <font>
+                            <Font size="45.0" />
+                         </font>
+                         <VBox.margin>
+                            <Insets left="20.0" right="20.0" />
+                         </VBox.margin>
+                      </Label>
+
+                        <!-- Category -->
+                      <Label fx:id="mediaCategory" prefHeight="17.0" prefWidth="499.0" text="Story">
+                         <font>
+                            <Font size="17.0" />
+                         </font>
+                         <VBox.margin>
+                            <Insets left="20.0" right="20.0" />
+                         </VBox.margin>
+                      </Label>
+
+                        <VBox>
+                            <children>
+                                <Label text="Author">
+                                    <font>
+                                        <Font size="17.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                            </VBox.margin>
+                        </VBox>
+
+                       <!-- Available -->
+                      <HBox prefWidth="200.0">
+                         <children>
+                            <Label text="Available:">
+                               <HBox.margin>
+                                  <Insets right="10.0" />
+                               </HBox.margin>
+                               <font>
+                                  <Font size="13.0" />
+                               </font></Label>
+                            <Label fx:id="mediaAvailable" text="10">
+                               <font>
+                                  <Font size="13.0" />
+                               </font></Label>
+                         </children>
+                         <VBox.margin>
+                            <Insets left="20.0" right="20.0" top="10.0" />
+                         </VBox.margin>
+                      </HBox>
+
+                       <!-- Quantity -->
+                       <HBox prefHeight="32.0" prefWidth="106.0" alignment="CENTER_LEFT">
+                           <children>
+                               <Label fx:id="mediaPrice" text="81.000đ" textFill="#e81414">
+                                   <HBox.margin>
+                                       <Insets right="25.0" />
+                                   </HBox.margin>
+                                   <font>
+                                       <Font size="27.0" />
+                                   </font>
+                               </Label>
+                               <Spinner fx:id="spinnerChangeNumber" prefHeight="26.0" prefWidth="98.0" />
+                           </children>
+                         <VBox.margin>
+                            <Insets left="20.0" right="20.0" />
+                         </VBox.margin>
+                       </HBox>
+
+                       <!-- Button add to cart -->
+                       <HBox alignment="CENTER" prefHeight="72.0" prefWidth="106.0">
+                           <children>
+                               <Button fx:id="addToCartBtn" alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="650.0" style="-fx-cursor: hand;" text="Add to Cart" />
+                           </children>
+                         <VBox.margin>
+                            <Insets left="20.0" right="20.0" />
+                         </VBox.margin>
+                       </HBox>
+                   </children>
+                </VBox>
+         </children>
+      </HBox>
+    </children>
+
+</AnchorPane>

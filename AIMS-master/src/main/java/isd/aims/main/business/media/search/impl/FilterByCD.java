@@ -1,9 +1,8 @@
-package isd.aims.main.business.media.search;
+package isd.aims.main.business.media.search.impl;
 
+import isd.aims.main.business.media.search.IFilter;
 import isd.aims.main.entity.media.Media;
-import isd.aims.main.repository.impl.MediaRepositoryImpl;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

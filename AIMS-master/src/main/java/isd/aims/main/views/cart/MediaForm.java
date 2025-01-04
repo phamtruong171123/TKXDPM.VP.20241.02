@@ -13,6 +13,7 @@ import isd.aims.main.entity.cart.CartMedia;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.FXMLForm;
+import isd.aims.main.views.media.ViewMediaForm;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -72,7 +73,6 @@ public class MediaForm extends FXMLForm {
 
 	private void setMediaInfo() {
 		title.setText(cartMedia.getMedia().getTitle());
-		System.out.println(title.getText());
 		price.setText(Utils.getCurrencyFormat(cartMedia.getPrice()));
 		File file = new File(Configs.IMAGE_PATH + cartMedia.getMedia().getImageURL());
 		Image im = new Image(file.toURI().toString());

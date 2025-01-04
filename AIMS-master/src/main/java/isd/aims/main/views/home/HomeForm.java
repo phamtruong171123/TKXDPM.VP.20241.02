@@ -1,6 +1,7 @@
 package isd.aims.main.views.home;
 
 import isd.aims.main.business.media.sort.SortOption;
+import isd.aims.main.controller.ViewMediaController;
 import isd.aims.main.exception.ViewCartException;
 import isd.aims.main.controller.HomeController;
 import isd.aims.main.controller.ViewCartController;
@@ -11,6 +12,8 @@ import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.BaseForm;
 import isd.aims.main.views.cart.CartForm;
+import isd.aims.main.views.media.ViewBookForm;
+import isd.aims.main.views.media.ViewMediaForm;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -217,9 +220,33 @@ public class HomeForm extends BaseForm implements Initializable {
         this.homeItems = new ArrayList();
         for (Media media : mediaList) {
             MediaForm m1 = new MediaForm(Configs.HOME_MEDIA_PATH, media, this);
+            m1.getMediaImage().setOnMouseClicked(event -> {
+                try {
+                    openViewMedia(media);
+                } catch (IOException | SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+            m1.getMediaTitle().setOnMouseClicked(event -> {
+                try {
+                    openViewMedia(media);
+                } catch (IOException | SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            });
             this.homeItems.add(m1);
         }
         addMediaHome(this.homeItems);
+    }
+
+    private void openViewMedia(Media media) throws IOException, SQLException {
+        LOGGER.info("User clicked to view media");
+        ViewMediaForm viewMediaScreen = new ViewMediaForm(this.stage, Configs.VIEW_MEDIA_PATH, media, this);
+        viewMediaScreen.setHomeScreenHandler(this);
+        viewMediaScreen.setBController(new ViewMediaController());
+        viewMediaScreen.setPreviousScreen(this);
+        viewMediaScreen.setScreenTitle("View Media Screen");
     }
 
     @SuppressWarnings("rawtypes")
