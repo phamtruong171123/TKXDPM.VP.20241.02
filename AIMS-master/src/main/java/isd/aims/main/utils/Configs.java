@@ -52,6 +52,7 @@ public class Configs {
 	public static final String HOME_PATH  = "fxml/home.fxml";
 	public static final String HOME_MEDIA_PATH = "fxml/media_home.fxml";
 	public static final String POPUP_PATH = "fxml/popup.fxml";
+	public static final String TRANSACTION_SCREEN_PATH = "isd/aims/main/fxml/ListTransaction.fxml";
 
 	public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, 24);
 

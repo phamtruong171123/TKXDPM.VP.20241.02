@@ -8,6 +8,7 @@ import isd.aims.main.entity.media.Media;
 import isd.aims.main.utils.Configs;
 import isd.aims.main.utils.Utils;
 import isd.aims.main.views.BaseForm;
+import isd.aims.main.views.ListTransactionForm.ListTransactionForm;
 import isd.aims.main.views.cart.CartForm;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,7 +57,8 @@ public class HomeForm extends BaseForm implements Initializable {
 
     @FXML
     private HBox hboxMedia;
-
+    @FXML
+    private ImageView transactionIcon;
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
 
@@ -99,6 +101,17 @@ public class HomeForm extends BaseForm implements Initializable {
         }
 
 
+        transactionIcon.setOnMouseClicked(e -> {
+            LOGGER.info("User clicked to view transactions");
+            try {
+                ListTransactionForm form = new ListTransactionForm(stage, "/isd/aims/main/fxml/ListTransaction.fxml");
+                form.show();
+            } catch (IOException e1) {
+                LOGGER.severe("Failed to navigate to transaction screen: " + Configs.TRANSACTION_SCREEN_PATH + " - " + e1.getMessage());
+                e1.printStackTrace();
+            }
+
+        });
         aimsImage.setOnMouseClicked(e -> {
             addMediaHome(this.homeItems);
         });

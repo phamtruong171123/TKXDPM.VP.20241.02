@@ -1,6 +1,7 @@
 package isd.aims.main;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import isd.aims.main.utils.Configs;
 import isd.aims.main.views.home.HomeForm;
@@ -25,7 +26,7 @@ public class App extends Application {
         try {
 
             // initialize the scene
-            StackPane root = (StackPane) FXMLLoader.load(getClass().getResource(Configs.SPLASH_SCREEN_PATH));
+            StackPane root = (StackPane) FXMLLoader.load(Objects.requireNonNull(getClass().getResource(Configs.SPLASH_SCREEN_PATH)));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();

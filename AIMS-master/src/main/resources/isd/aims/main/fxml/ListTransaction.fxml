@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml">
+    <TableView fx:id="tableView" layoutX="50" layoutY="50" prefWidth="600" prefHeight="400">
+        <columns>
+            <TableColumn fx:id="orderIDColumn" text="Order ID" prefWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="orderID"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="createAtColumn" text="Created At" prefWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="createAt"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="contentColumn" text="Content" prefWidth="200">
+                <cellValueFactory>
+                    <PropertyValueFactory property="content"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</AnchorPane>
